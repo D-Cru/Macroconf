@@ -1,0 +1,13 @@
+Minimize water
+ System minimization.
+&cntrl
+   imin=1, ntmin=1, !(Invoke Minimization)
+   ntx=1, irest=0, !(read init. coords, no restart)
+   maxcyc=20000, ncyc=15000, !(max. cycles switch to conj. grad.)
+   drms=0.1, !(convergence criterion)
+   ntpr=100, ntwr=100, iwrap=0, !(outputs)
+   ntf=1, !(force eval all)
+   cut=8.0, !(non-bonded cutoff)
+   ntr=1, !(cartesian restraints)
+   restraintmask="!:WAT", restraint_wt=10.0, !(restrain all but water)
+ /

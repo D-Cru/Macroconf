@@ -1,0 +1,2 @@
+readdata data/interim/tests/24/DMSO_GAFF_RESP/6_equil_2/eq_2.out name mdout 
+writedata data/interim/tests/24/DMSO_GAFF_RESP/6_equil_2/eq_2_rho.dat mdout[Density] time 0.002

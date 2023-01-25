@@ -1,0 +1,14 @@
+equil NPT 0.5ns
+ heat
+ &cntrl
+  imin=0,irest=1,ntx=5, !(restart, read coords and velo.)
+  nstlim=250000,dt=0.002, !(timestep)
+  ntpr=500, ntwx=500, iwrap=1, !(output)
+  ntc=2, ntf=2, !(SHAKE, force eval)
+  ntp=1, !(pressure control)
+  ntt=3, temp0=300.0, gamma_ln=2.0, !(temperature control)
+  cut=8.0, !(non-bonded cutoff)
+  ntr=1, !(cartesian restraints)
+  restraintmask=':* <@4.5 & !:WAT', !(all heavy atoms, not water)
+  restraint_wt=10.0,
+ /
