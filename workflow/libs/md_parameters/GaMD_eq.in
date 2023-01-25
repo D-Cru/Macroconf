@@ -1,0 +1,15 @@
+GaMD equilibration 52 ns total
+ &cntrl
+   imin=0, irest=0, ntx=1, !(no restart)
+   dt=0.002, nstlim=26000000, t=0 !(run for 52 ns)
+   ntpr=1000, ntwx=1000, ntwr=1000, !(output control, c,e every 2 ps)
+   ntt=3, tempi=300, temp0=300, gamma_ln=2.0, ig=-1, !(temperature control)
+   ntp=1, !(pressure control)
+   ntc=2, ntf=2, !(SHAKE)
+	 cut=8.0, !(nonbonded cutoff)
+   iwrap=1, ioutfm=1, !(wrap coords in primary box, bin output.)
+   igamd = 3, iE = 1, irest_gamd = 0, !(gamd parameters: dual boost, low Ethres)
+   ntcmd = 1000000, nteb = 25000000, ntave = 200000,
+   ntcmdprep = 200000, ntebprep = 800000,
+   sigma0P = 6.0, sigma0D = 6.0,
+/

@@ -1,0 +1,19 @@
+heat NVT 0.5ps
+  Heating System
+&cntrl
+   imin=0, nmropt=1, !(md, read nmr restraints, weight changes)
+   ntx=1, irest=0, !(read init coords, no restart)
+   ntpr=500, ntwr=500, ntwx=500, iwrap=1, !(output)
+   nstlim=250000, nscm=500, dt=0.002, !(time, remove COM, dt)
+   ntt=1, temp0=0.0, tempi=0.0, tautp=0.5 !(temp. control)
+   ntc=2, ntf=2, !(SHAKE, force eval)
+   cut=8.0, !(non-bonded cutoff)
+   ntr=1, !(cartesian restraints)
+   restraintmask=':* <@4.5 & !:CL3', !(all heavy atoms, not water)
+   restraint_wt=10.0,
+&end
+
+&wt type='REST', istep1=0, istep2=0, value1=1.0, value2=1.0, &end
+&wt type='TEMP0', istep1=0, istep2=250000, value1=0.0, value2=300, &end
+&wt type='END' &end
+ /

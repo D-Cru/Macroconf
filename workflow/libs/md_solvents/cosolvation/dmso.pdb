@@ -1,0 +1,15 @@
+USER  MOD reduce.3.3.160602 H: found=6, std=0, add=0, rem=0, adj=0
+REMARK
+REMARK REORIENT 1 5 6 | 6 5 1
+REMARK
+ATOM      1 C1   DMSO    1       1.352  -0.789   0.180  1.00  0.00
+ATOM      2 H11  DMSO    1       1.336  -1.763  -0.294  1.00  0.00
+ATOM      3 H12  DMSO    1       1.277  -0.884   1.256  1.00  0.00
+ATOM      4 H13  DMSO    1       2.275  -0.281  -0.068  1.00  0.00
+ATOM      5 S2   DMSO    1       0.000   0.223  -0.433  1.00  0.00
+ATOM      6 O3   DMSO    1       0.000   1.470   0.373  1.00  0.00
+ATOM      7 C4   DMSO    1      -1.352  -0.789   0.180  1.00  0.00
+ATOM      8 H41  DMSO    1      -2.275  -0.281  -0.068  1.00  0.00
+ATOM      9 H42  DMSO    1      -1.336  -1.763  -0.294  1.00  0.00
+ATOM     10 H43  DMSO    1      -1.277  -0.884   1.256  1.00  0.00
+END

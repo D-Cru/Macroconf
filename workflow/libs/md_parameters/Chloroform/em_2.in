@@ -1,0 +1,16 @@
+Relax water
+ LET WATER MOVE
+&cntrl
+  imin=0,
+  ntx=1, irest=0,
+  ntpr=500, ntwx=500, ntwv=0, ntwe=0,
+  ntwr=5000, !(outputs)
+  t=0.0, dt=0.002, !(timestep)
+  nstlim=10000, iwrap=1, !(steps, wrap to box)
+  ntt=1, !(temp. control)
+  temp0=300.0, tempi=200.0, tautp=0.5,
+  ntp=1, pres0=1.0, !(pressure control)
+  ntc=2, ntf=2, !(SHAKE)
+  ntr=1, !(cart. restraints)
+  restraintmask="!:CL3" , restraint_wt=10.0, !(restrain all but water)
+ /

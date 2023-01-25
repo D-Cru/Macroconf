@@ -1,0 +1,15 @@
+100 ns NPT production aMD
+NPT
+ &cntrl
+ imin=0,irest=0,ntx=1, !(restart MD)
+ dt={dt}, nstlim={nstlim}, t=0, !(run for specified time)
+ ntpr={ntpr}, ntwx={ntwx}, ntwr={ntwr}, !(output control, c,e every 2ps)
+ ntt=3, tempi=300, temp0=300, gamma_ln=2.0, ig=-1, !(temp. control)
+ ntp=1, !(pressure control)
+ ntc=2, ntf=2, !(SHAKE)
+ cut=8.0, !(nonbonded cutoff)
+ ioutfm=1,iwrap=1, !(wrap coords in primary box, bin output.)
+ iamd=3, !(dual boost aMD)
+ ethreshd={e_dihed:.1f}, alphad={alpha_dihed:.1f},
+ ethreshp={e_tot:.1f}, alphap={alpha_tot:.1f},
+ /

@@ -1,0 +1,11 @@
+100 ns conventional MD. production.
+ &cntrl
+   imin=0, irest=1, ntx=5, !(restart MD)
+   dt=0.002, nstlim=50000000, t=0 !(run for 100 ns)
+   ntpr=1000, ntwx=1000, ntwr=1000, !(output control, c,e every 2 ps)
+   ntt=3, tempi=300, temp0=300, gamma_ln=2.0, ig=-1, !(temperature control)
+   ntp=1, !(pressure control)
+   ntc=2, ntf=2, !(SHAKE)
+	 cut=8.0, !(nonbonded cutoff)
+   iwrap=1, ioutfm=1, !(wrap coords in primary box, bin output.)
+/

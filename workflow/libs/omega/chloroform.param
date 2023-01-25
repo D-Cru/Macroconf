@@ -1,0 +1,26 @@
+#Interface settings
+
+#Mode oeomega_macrocycle
+#-in  input.smi
+#-molNames
+#-out (Not set, no default)
+#-prefix
+-progress  3
+
+#Execute Options :
+    #-param (Not set, no default)
+    #-mpi_np 24
+    #-mpi_hostfile (Not set, no default)
+
+#Macrocycle Omega Options :
+    -iteration_cycle_size  500
+    -max_iterations  2000
+
+    #Macrocycle Builder Options :
+        -dielectric_constant  4.8
+        #-ref_tolerance  0.001
+
+    #Omega Slice Ensemble Options :
+        -eWindow  20.0
+        -maxConfs  400
+        -rms  0.5
