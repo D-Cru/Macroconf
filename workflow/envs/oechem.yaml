@@ -1,0 +1,7 @@
+name: oechem
+channels:
+  - openeye
+  - conda-forge
+dependencies:
+  - openeye-toolkits
+  - numpy

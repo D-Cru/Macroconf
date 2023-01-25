@@ -1,0 +1,3 @@
+compound	method	solvent	simtime	dt	repeats	igamd
+22,24	GaMD,cMD, aMD	H2O,DMSO_GAFF_RESP	2	0.002	1
+22,24	GaMD,cMD	Chloroform	2	0.002	1

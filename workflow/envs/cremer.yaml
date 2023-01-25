@@ -1,0 +1,24 @@
+name: cremer
+channels:
+  - conda-forge
+  - tpeulen
+  - rmg
+dependencies:
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - mdtraj
+  - notebook
+  - pyemma
+  - scikit-learn
+  - numba
+  - rdkit
+  - pyrdl
+  - pip:
+    - giotto-tda
+    - scikit-tda
+
+
+
+

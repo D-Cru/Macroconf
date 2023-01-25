@@ -1,0 +1,208 @@
+format: jb-book
+root: index
+options:
+  numbered: true
+chapters:
+- file: links/dataset
+- file: single
+  sections:
+  - file: links/210a1ea8aa678b16_GaMD_processed
+    title: 22-H2O-GaMD-2000-0
+  - file: links/586db4c575bef492_cMD_processed
+    title: 22-H2O-cMD-2000-0
+  - file: links/3595ce0609206d95_aMD_processed
+    title: 22-H2O-aMD-2000-0
+  - file: links/583fbeed838cced5_GaMD_processed
+    title: 22-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/5405e3b785af9601_GaMD_processed
+    title: 22-Chloroform-GaMD-2000-0
+  - file: links/c5389d15c56a3655_GaMD_processed
+    title: 22-H2O-GaMD-1000-0
+  - file: links/3a8c4367deb63d6e_GaMD_processed
+    title: 22-H2O-GaMD-100-0
+  - file: links/4f386944d88e6ef8_GaMD_processed
+    title: 24-H2O-GaMD-2000-0
+  - file: links/c99bbf5d17e8efb9_cMD_processed
+    title: 24-H2O-cMD-2000-0
+  - file: links/374722583485687f_GaMD_processed
+    title: 33-H2O-GaMD-2000-0
+  - file: links/344b9e878043dfcf_cMD_processed
+    title: 33-H2O-cMD-2000-0
+  - file: links/9e61be229abfc57f_GaMD_processed
+    title: 49-H2O-GaMD-2000-0
+  - file: links/13c5dee00c76dc47_cMD_processed
+    title: 49-H2O-cMD-2000-0
+  - file: links/9f59bd3ed468e53f_GaMD_processed
+    title: 50-H2O-GaMD-2000-0
+  - file: links/8d76713ef414e389_cMD_processed
+    title: 50-H2O-cMD-2000-0
+  - file: links/2f74eee1c02ff2a9_GaMD_processed
+    title: 51-H2O-GaMD-2000-0
+  - file: links/ff5c2026bb8cfce8_cMD_processed
+    title: 51-H2O-cMD-2000-0
+  - file: links/28159d44aa267024_GaMD_processed
+    title: 55-H2O-GaMD-2000-0
+  - file: links/5ead922859f5c96d_cMD_processed
+    title: 55-H2O-cMD-2000-0
+  - file: links/250c26e1ba562237_GaMD_processed
+    title: 56-H2O-GaMD-2000-0
+  - file: links/eff35c6c3e18f0a3_cMD_processed
+    title: 56-H2O-cMD-2000-0
+  - file: links/12cee40b82354fab_GaMD_processed
+    title: 57-H2O-GaMD-2000-0
+  - file: links/5dc9eaf6e041f3f2_cMD_processed
+    title: 57-H2O-cMD-2000-0
+  - file: links/d6072f62493cc5af_GaMD_processed
+    title: 58-H2O-GaMD-2000-0
+  - file: links/f9df090456539245_cMD_processed
+    title: 58-H2O-cMD-2000-0
+  - file: links/39f5beb490ee4833_GaMD_processed
+    title: 59-H2O-GaMD-2000-0
+  - file: links/cc9e4f8eb83eb5e7_cMD_processed
+    title: 59-H2O-cMD-2000-0
+  - file: links/610cc1e1311c2792_GaMD_processed
+    title: 60-H2O-GaMD-2000-0
+  - file: links/36cc5f966dea67cb_cMD_processed
+    title: 60-H2O-cMD-2000-0
+  - file: links/5061cfcd53f488df_GaMD_processed
+    title: 61-H2O-GaMD-2000-0
+  - file: links/167326bf49040dbd_cMD_processed
+    title: 61-H2O-cMD-2000-0
+  - file: links/ed2e9ab42cf3819c_GaMD_processed
+    title: 62-H2O-GaMD-2000-0
+  - file: links/474e13185acfa1a8_cMD_processed
+    title: 62-H2O-cMD-2000-0
+  - file: links/d3aa194ff18a9e75_GaMD_processed
+    title: 63-H2O-GaMD-2000-0
+  - file: links/8db033dcdd7bf626_cMD_processed
+    title: 63-H2O-cMD-2000-0
+  - file: links/eab37e4b3e032de2_GaMD_processed
+    title: 64-H2O-GaMD-2000-0
+  - file: links/811158a8b531154d_cMD_processed
+    title: 64-H2O-cMD-2000-0
+  - file: links/7b17fe71946f4dd7_GaMD_processed
+    title: 65-H2O-GaMD-2000-0
+  - file: links/45750abf2112f0e2_cMD_processed
+    title: 65-H2O-cMD-2000-0
+  - file: links/bd34df1820fd3dd0_GaMD_processed
+    title: 66-H2O-GaMD-2000-0
+  - file: links/8b69117d53937901_cMD_processed
+    title: 66-H2O-cMD-2000-0
+  - file: links/cd3179da84da7836_GaMD_processed
+    title: 68-H2O-GaMD-2000-0
+  - file: links/11a7fb1e6aad7905_cMD_processed
+    title: 68-H2O-cMD-2000-0
+  - file: links/f2825d3690a271d0_cMD_processed
+    title: 1_1-Chloroform-cMD-2000-0
+  - file: links/c1d9e06a52efb84d_GaMD_processed
+    title: 1_1-Chloroform-GaMD-2000-0
+  - file: links/421b10c8566b49cb_cMD_processed
+    title: 1_2-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/8ca570a3bee4327e_GaMD_processed
+    title: 1_2-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/79804846e6901cf6_cMD_processed
+    title: 22-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/2f45361261b805e5_cMD_processed
+    title: 24-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/069cca5a0bbb1937_GaMD_processed
+    title: 24-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/334abba1d29a4378_cMD_processed
+    title: 27-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/8b6552e2914a062f_GaMD_processed
+    title: 27-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/74633fb83c0d5f89_cMD_processed
+    title: 28-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/babaf70b2b786682_GaMD_processed
+    title: 28-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/c4209a995bd14e57_cMD_processed
+    title: 29-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/467c506b6744c831_GaMD_processed
+    title: 29-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/126bbd887309df40_cMD_processed
+    title: 30-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/58f55feb935887fb_GaMD_processed
+    title: 30-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/d1d453ef88c14913_cMD_processed
+    title: 31-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/7d461adf7ab73336_GaMD_processed
+    title: 31-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/fa08f684840cbc89_cMD_processed
+    title: 32-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/b97accb0b36736bf_GaMD_processed
+    title: 32-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/a03586fd58d627cd_cMD_processed
+    title: 33-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/d13fd5c825a5a7e9_GaMD_processed
+    title: 33-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/ae86721015402cfa_cMD_processed
+    title: 35-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/6621b58bd327078d_GaMD_processed
+    title: 35-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/13607ce653c1715e_cMD_processed
+    title: 36-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/2cfb6b191b7a46f2_GaMD_processed
+    title: 36-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/439e771e612e69f6_cMD_processed
+    title: 38-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/ae576072a28ef51e_GaMD_processed
+    title: 38-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/30d5ac208620d9ce_cMD_processed
+    title: 39-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/b29633ebde708f87_GaMD_processed
+    title: 39-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/4e7bd481d58354ec_cMD_processed
+    title: 40-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/5450f25d2ed9c22a_GaMD_processed
+    title: 40-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/152ec36e3269fbd5_cMD_processed
+    title: 41-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/4f62f5b571b6109b_GaMD_processed
+    title: 41-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/e3a36fd0612b2ce3_cMD_processed
+    title: 42-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/195d188bbd583ece_GaMD_processed
+    title: 42-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/b0163eba7e6d9b80_cMD_processed
+    title: 49-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/5b93caea6ecd1712_GaMD_processed
+    title: 49-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/4b93d27539017144_cMD_processed
+    title: 50-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/5d2ce3dc4525e24d_GaMD_processed
+    title: 50-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/26e5e96f1ec47099_cMD_processed
+    title: 51-DMSO_GAFF_RESP-cMD-2000-0
+  - file: links/5c9adcde9c03b8b1_GaMD_processed
+    title: 51-DMSO_GAFF_RESP-GaMD-2000-0
+  - file: links/777fb4f8db256554_cMD_processed
+    title: 52-H2O-cMD-2000-0
+  - file: links/5cc032301cb44666_GaMD_processed
+    title: 52-H2O-GaMD-2000-0
+  - file: links/41d574d4866a27a1_GaMD_processed
+    title: 22-DMSO_GAFF_RESP-GaMD-2000-1
+  - file: links/18de159d9165a31e_GaMD_processed
+    title: 22-H2O-GaMD-1000-0
+  - file: links/ee0ed163301c7cbf_GaMD_processed
+    title: 22-H2O-GaMD-1000-0
+- file: manual_comparison
+  sections:
+  - file: links/28159d44aa267024_5ead922859f5c96d_5ead922859f5c96d_0_0_compar
+    title: Compound 55
+  - file: links/250c26e1ba562237_eff35c6c3e18f0a3_eff35c6c3e18f0a3_0_0_compar
+    title: Compound 56
+  - file: links/210a1ea8aa678b16_3595ce0609206d95_586db4c575bef492_0_0_compar
+    title: Compound 22
+  - file: links/210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_0_0_compar
+    title: Compound 22
+  - file: links/210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_omega_basic_rdkit_ETKDGv3mmff_compar
+    title: Compound 22
+  - file: links/210a1ea8aa678b16_c5389d15c56a3655_3a8c4367deb63d6e_0_0_compar
+    title: Compound 22
+  - file: links/4f386944d88e6ef8_c99bbf5d17e8efb9_c99bbf5d17e8efb9_0_0_compar
+    title: Compound 24
+  - file: links/9e61be229abfc57f_13c5dee00c76dc47_13c5dee00c76dc47_0_0_compar
+    title: Compound 49
+- file: method_comparison
+- file: full_comparison
+  sections:
+  - file: links/28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp

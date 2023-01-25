@@ -1,0 +1,21 @@
+name: visual_mc
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nglview
+  - numba
+  - openpyxl
+  - seaborn
+  - rdkit=2022.03
+  - notebook
+  - scipy=1.8
+  - matplotlib
+  - scikit-learn=1.1
+  - pandas=1.4
+  - ipywidgets
+  - numpy=1.21
+  - bokeh=2.4
+  - mols2grid=1.0
+  - cairosvg=2.5
+prefix: /biggin/b147/univ4859/miniconda3/envs/visual_mc

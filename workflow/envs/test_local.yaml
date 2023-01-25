@@ -1,0 +1,28 @@
+name: test_local_install
+channels:
+  - conda-forge
+  - tpeulen
+  - rmg
+dependencies:
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - mdtraj
+  - notebook
+  - pyemma
+  - scikit-learn
+  - ipywidgets
+  - nglview
+  - pymol-open-source
+  - bokeh
+  - seaborn
+  - numba
+  - rdkit
+  - pyrdl
+  - pip
+  - svgutils
+  - pip:
+    - giotto-tda
+    - scikit-tda
+    - -e .

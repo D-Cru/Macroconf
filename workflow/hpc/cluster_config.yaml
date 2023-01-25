@@ -1,0 +1,31 @@
+cluster:
+  "mkdir -p logs/{rule} &&
+  source /home/univ4859/.bashrc &&
+  source /etc/profile.d/modules.sh &&
+  module load slurm &&
+  sbatch 
+    --job-name=s-{rule}-{wildcards}
+    --nodes=1
+    --ntasks-per-node=1
+    --cpus-per-task=2
+    --gres=gpu:{resources.gpu}
+    --gres-flags=enforce-binding
+    -p gpu-biggin4
+    --time={resources.runtime}
+    --verbose" 
+default-resources:
+  - gpu=0
+  - runtime=10
+restart-times: 1
+printshellcmds: True
+max-jobs-per-second: 2
+max-status-checks-per-second: 10
+local-cores: 2
+latency-wait: 60
+jobs: 32
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+use-envmodules: False
+use-conda: True
+conda-prefix: ../snakemake_conda/

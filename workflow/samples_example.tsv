@@ -1,0 +1,2 @@
+compound	method	solvent	simtime	dt	repeats	igamd
+22	GaMD,cMD, aMD	H2O	2000	0.002	1

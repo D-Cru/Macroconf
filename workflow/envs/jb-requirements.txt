@@ -1,0 +1,12 @@
+jupyter-book>=0.13
+matplotlib>=3.6
+numpy>=1.12
+ghp-import>=2.1
+nglview>=3.0.3
+bokeh>=2.4
+scikit-learn>=1.1
+mdtraj>=1.9
+pandas>=1.5
+ipympl>=0.9
+myst-nb==0.13.2
+myst-nb-bokeh==0.5.3

@@ -1,0 +1,11 @@
+name: stats_comp
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib
+  - numpy
+  - scipy
+  - pandas
+  - notebook
+  - scikit-learn
+  - seaborn

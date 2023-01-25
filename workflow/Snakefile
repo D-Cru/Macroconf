@@ -1,0 +1,85 @@
+# Workflow to automatically run (accelerated) molecular dynamics (MD)
+# simulations of macrocyclic peptides & cheminformatics conformer generators.
+
+
+# Fix working directory to /workflow. Snakemake command can be run from within
+# the workflow directory or from the parent directory.
+workdir: workflow.basedir
+
+
+configfile: "snakemake-config.yaml"
+
+
+# Parse tabular configuration from samples.tsv
+# This produces a dict. `samples` which contains parameters for all md runs
+# to perform.
+include: "rules/prepare_samples.smk"
+# Import various rules
+# Add topology builder
+include: "rules/topology.smk"
+# Add rules for MD methods
+include: "rules/em-eq.smk"
+include: "rules/gamd.smk"
+include: "rules/amd.smk"
+include: "rules/cmd.smk"
+include: "rules/comp-analysis.smk"
+include: "rules/eq-analysis.smk"
+include: "rules/md-utils.smk"
+include: "rules/convergence_check.smk"
+# Add conformer generators
+include: "rules/cheminfo_confgen.smk"
+# add new compound
+include: "rules/add-compound.smk"
+
+
+############################ Execution options #################################
+# Set max. number of threads available to snakemake
+threads_max = config["threads_max"]
+
+
+# specify rules to run locally (on the headnode) if in cluster execution mode
+# md_GaMD_make_param, md_aMD_make_param
+localrules:
+    all,
+    md_pre_topology,
+    md_build_leap,
+    md_make_topology,
+    md_cMD_make_param,
+    util_ncdf,
+    md_aMD_pre_ana,
+    md_GaMD_pre_ana,
+
+
+# Define files to produce for Snakemake based on what's in samples.tsv.
+# Details are defined in `prepare_samples.smk`
+rule all:
+    input:
+        [
+            # Produce dihedral pca plots for all samples.
+            single_md_analysis_files,
+            # Produce equilibration analysis plots.
+            equilibration_check_files,
+            # Produce comparison analysis plots.
+            comp_analysis_files,
+            # Produce heatmaps comparing performance of different methods per compound
+            heatmap_files,
+            # Produce cheminformatics conformer generator outputs
+            conf_gen_files,
+            # Produce cheminformatics conformer generator NOEs
+            conf_gen_NOE,
+            # # Convergence_check:
+            convergence_check_files,
+            # Method performance comparison
+            method_comp_files,
+            # figures for paper
+            paper_fig_files,
+        ],
+
+
+# successful / failed workflow actions
+# onsuccess:
+#     print("Workflow finished, no error")
+#     # shell("echo 'no errors. sucess' | python scripts/send_mail.py")
+# onerror:
+#     print("An error occurred")
+#     # shell("{log} > python scripts/send_mail.py")

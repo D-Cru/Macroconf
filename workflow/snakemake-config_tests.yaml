@@ -1,0 +1,90 @@
+threads_max: 2
+
+# Switch off certain analysis parts of the workflow, this is useful when running on a cluster and full analysis should not be done!
+# However, if e.g. the paper figures are requested, the Snakemake will run all previous steps of the workflow that are not up to date or missing!
+
+run_single_md_analysis: False  # Analysis of single MD runs
+run_comp_analysis: False  # This compares 3 single MD runs of the same compound, and confgens
+run_heatmap_analysis: False  # Compare NOE stats of all MD runs for a single compound
+run_method_comp: False  # This does not produce any files rn..
+run_eq_analysis: False  # Analyse equilibrations of single MD runs
+run_omega: False  # Run Omega Macrocycle for all samples compounds
+run_rdkit: False  # Run RDKit ETKDG for all samples compounds
+run_cheminfo_NOE_analysis: False  # Compute cheminformatics NOEs for all samples compounds
+make_paper_figures: False  # Produce figures for publication.
+update_jupyter_book: False  # Update toc (& symlinks) for the jupyter book
+
+# Specify a simulation that is a reference for a convergence check (start new equivalent simulations from every cluster point found in the reference simulation)
+convergence_check: ["7f5696daa1cbe87d"]
+# Run convergence check
+run_convergence_check: False
+
+# Specify default values for samples.tsv file
+# The line below means: The parameter 'igamd' is set to 3 for GaMD simulations
+# (if not specified otherwise in samples.tsv file), and set to nan for all other
+# simulation methods
+method_defaults: {
+  'igamd': {'methods': ['GaMD'], 'default': '3', 'others': 'nan'},
+}
+
+# Use shortened trajectories and dihedrals
+shortened: False
+
+# set a stride (stride 10: only load every 10th frame) for the analysis of MD simulations to decrease load times.
+stride: 1
+# TODO: continue implementation of this, wherever dihedrals are used!
+
+# Set expected ns/h of MD simulations for simulations on Cluster
+ns_h: 7.5
+
+# specify hashes of methods to directly compare with one another 
+# ["hash1", "hash2", "hash3", "compound_id", "conformer generator", "conformer generator settings"],
+# if no conformer generator should be compared to, insert "0" for the last 2 columns
+hash_list: [
+    ["7f5696daa1cbe87d", "a033db1075c6b36c", "214b8ec88026de74", "24", "omega_basic", "rdkit_ETKDGv3mmff"],
+]
+
+# Specify different parameter sets for conformer generator methods
+confgen_parameters: {
+  "omega": ['basic', 'chloroform', 'lowEwindow', 'highEwindow', 'lowrms', 'highrms', 'highmaxconf', 'highmaxit', 'highsampling', 'lotsdifferent'],  
+  "rdkit": ['basic', 'ETDG', 'ETKDGv1', 'ETKDGv2', 'ETKDGv3', 'srETKDGv3', 'KDG', 'def-ETDG', 'def-ETKDGv1', 'def-ETKDGv2', 'def-ETKDGv3', 'def-srETKDGv3', 'def-KDG', 'highsampling', 'lotsdifferent']
+  }
+
+heatmap_compounds: [22, 24]
+
+# overwrite min_samples parameter for DBSCAN clustering in analysis of MD simulations.
+# specify as 'hash': min_samples,
+cluster_conf: {
+  '242ee4d4af3634ed': 15,
+  'c5389d15c56a3655': 10,
+  '3c523c7ca380f925': 10,
+  'ca1a37290d9e454e': 8,
+  '9a100624325ec4cd': 6,
+  '3d00b0964201e088': 10,
+  '210a1ea8aa678b16': 8,
+}
+
+
+# specify file paths
+exp_name: "tests"
+data_name: "22-02-2021_MacroConf-v2"
+dataset_file: "data/external/22-09-2021_MacroConf-v2.1/dataset.csv"
+sample_file: "samples_tests.tsv"
+sample_output: "samples_old.tsv"
+# modified amberff14sb force field file, with terminal groups removed
+forcefield: "libs/forcefields/leaprc.protein.ff14SB_noterminal"
+jb-toc: "reports/jb/_toc.yml"
+jb-links: "reports/jb/links/"
+
+DMSO_default: 'DMSO_GAFF_RESP'
+CDCl3_default: "Chloroform"
+
+# specify MD parameters
+DMSO_params: "libs/md_solvents/dmso/frcmod.dmso"
+DMSO_box: "libs/md_solvents/dmso/dmsobox.off"
+Chloroform_params: "frcmod.chcl3"
+
+
+full_analysis_files : [
+  "../../../data/processed/refactor-test/notebooks/methods/28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp.ipynb",
+]
