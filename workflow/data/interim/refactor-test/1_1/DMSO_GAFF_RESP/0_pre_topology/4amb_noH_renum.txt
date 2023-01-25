@@ -1,0 +1,6 @@
+LEU     1    LEU     1
+PHE     2    PHE     2
+PRO     3    PRO     3
+LEU     4    LEU     4
+LEU     5    LEU     5
+ILE     6    ILE     6

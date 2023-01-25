@@ -1,0 +1,130 @@
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/prep to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd to search path.
+-f: Source data/interim/refactor-test/64/H2O/1_make_topology/tleap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./data/interim/refactor-test/64/H2O/1_make_topology/tleap.in
+Log file: ./data/interim/refactor-test/64/H2O/1_make_topology/leap.log
+----- Source: ./libs/forcefields/leaprc.protein.ff14SB_noterminal
+----- Source of ./libs/forcefields/leaprc.protein.ff14SB_noterminal done
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/amino12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminoct12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminont12.lib
+----- Source: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd/leaprc.water.tip3p done
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/atomic_ions.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/solvents.lib
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+Loading PDB file: ./data/interim/refactor-test/64/H2O/0_pre_topology/4amb_noH.pdb
+  total atoms in file: 160
+Checking Unit.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+The unperturbed charge of the unit (1.000000) is not zero.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 29 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+Writing pdb file: data/interim/refactor-test/64/H2O/1_make_topology/mc_gas.pdb
+Writing mol2 file: data/interim/refactor-test/64/H2O/1_make_topology/mc_gas.mol2
+Total unperturbed charge:   1.000000
+Total perturbed charge:     1.000000
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+addIons: 1st Ion & target unit have charges of the same sign:
+     unit charge = 1; ion1 charge = 1;
+     can't neutralize.
+1 Cl- ion required to neutralize.
+Adding 1 counter ions to "ramp" using 1A grid
+Grid extends from solute vdw + 2.51  to  8.42
+Resolution:      1.00 Angstrom.
+ (no solvent present)
+Calculating grid charges
+Placed Cl- in ramp at (25.16, 15.57, 12.90).
+
+Done adding ions.
+Checking 'ramp'....
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+Close contact of 1.448068 angstroms between .R<THR 8>.A<HG1 12> and .R<THR 8>.A<HG22 9>
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+Close contact of 0.958488 angstroms between .R<THR 8>.A<HG22 9> and .R<THR 8>.A<HB 6>
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+Close contact of 0.566657 angstroms between .R<THR 8>.A<HG22 9> and .R<THR 8>.A<CB 5>
+Checking parameters for unit 'ramp'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 3
+Unit is OK.
+Scaling up box by a factor of 1.255940 to meet diagonal cut criterion
+  Solute vdw bounding box:              16.185 17.550 14.902
+  Total bounding box for atom centers:  47.693 47.693 47.693
+      (box expansion for 'iso' is   9.0%)
+  Solvent unit box:                     18.774 18.774 18.774
+  Volume: 57725.562 A^3 (oct)
+  Total mass 29160.650 amu,  Density 0.839 g/cc
+  Added 1556 residues.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 29 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	1556
+  )
+ (no restraints)
+Writing pdb file: data/interim/refactor-test/64/H2O/1_make_topology/mc_sol.pdb
+   printing CRYST1 record to PDB file with box info
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 5; Notes = 1.

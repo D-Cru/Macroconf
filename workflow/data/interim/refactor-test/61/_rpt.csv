@@ -1,0 +1,2 @@
+Molecule,SMILES,ElapsedTime(s),Status
+,CC(C)C[C@H]1C(=O)N[C@@H](C(=O)N2CCC[C@@H]2C(=O)N3CCC[C@H]3C(=O)N[C@H](C(=O)N[C@@H](C(=O)N4CCC[C@H]4C(=O)N[C@H](C(=O)N[C@H](C(=O)N1)CC(=O)O)CCCCN)Cc5cnc[nH]5)Cc6ccc(cc6)O)CCC(=O)N,0.00

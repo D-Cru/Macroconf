@@ -1,0 +1,1 @@
+{"index": 66, "solvent": "H2O", "seq_length": 7, "bonds": ["HT"], "sequence": "QDP(DPR)K(DTH)(DAS)", "sequence_1": "QDPpKtd", "natural_cyclic_peptide": 0, "non_natural_cyclic_peptide": 1, "smile": "N2[C@@]([H])(CCC(=O)N)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N1[C@@]([H])(CCC1)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@]([H])([C@@]([H])(O)C)C(=O)N[C@]([H])(CC(=O)O)C2(=O)"}

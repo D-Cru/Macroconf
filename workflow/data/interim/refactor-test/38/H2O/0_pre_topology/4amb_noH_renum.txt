@@ -1,0 +1,5 @@
+ARG     1    ARG     1
+GLY     2    GLY     2
+ASH     3    ASH     3
+TRP     4    TRP     4
+VAL     5    VAL     5

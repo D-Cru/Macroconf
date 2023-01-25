@@ -1,0 +1,1 @@
+{"index": 999, "solvent": "H2O", "seq_length": 6, "bonds": ["HT"], "sequence": "cyclo-(RGDFPA) cis/trans", "sequence_1": "RGDFPA", "natural_cyclic_peptide": 1, "non_natural_cyclic_peptide": 0, "multi": {"50a": "trans", "50b": "cis"}, "distinction": [3,4]}

@@ -1,0 +1,7 @@
+HIS     1    HIS     1
+PRO     2    PRO     2
+ASP     3    ASP     3
+GLN     4    GLN     4
+SER     5    SER     5
+GLU     6    GLU     6
+PRO     7    PRO     7

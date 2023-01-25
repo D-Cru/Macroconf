@@ -1,0 +1,1 @@
+{"index": 40, "solvent": "DMSO", "seq_length": 5, "bonds": ["HT"], "sequence": " c(RGDKv)", "sequence_1": "RGDKv", "natural_cyclic_peptide": 0, "non_natural_cyclic_peptide": 1, "smile": "N1[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@]([H])(C(C)C)C1(=O)"}

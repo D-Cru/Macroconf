@@ -1,0 +1,5 @@
+PRO     1    PRO     1
+SER     2    SER     2
+LEU     3    LEU     3
+ASP     4    ASP     4
+VAL     5    VAL     5

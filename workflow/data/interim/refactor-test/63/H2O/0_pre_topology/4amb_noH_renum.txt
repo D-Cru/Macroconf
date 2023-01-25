@@ -1,0 +1,7 @@
+GLN     1    GLN     1
+ASP     2    ASP     2
+PRO     3    PRO     3
+PRO     4    PRO     4
+LYS     5    LYS     5
+THR     6    THR     6
+ASP     7    ASP     7

@@ -1,0 +1,1 @@
+{"index": 60, "solvent": "H2O", "seq_length": 8, "bonds": ["HT"], "sequence": "(DAR)Q(DPR)(DGN)R(DGL)PQ", "sequence_1": "rQpqRePQ", "natural_cyclic_peptide": 0, "non_natural_cyclic_peptide": 1}

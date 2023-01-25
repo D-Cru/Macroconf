@@ -1,0 +1,1 @@
+{"index": 51, "solvent": "DMSO", "seq_length": 5, "bonds": ["HT"], "sequence": "cyclo-(-D-Pro-Ala-Ala-Ala-Ala-)", "sequence_1": "pAAAA", "natural_cyclic_peptide": 0, "non_natural_cyclic_peptide": 1, "smile": "N21[C@]([H])(CCC1)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C2(=O)"}

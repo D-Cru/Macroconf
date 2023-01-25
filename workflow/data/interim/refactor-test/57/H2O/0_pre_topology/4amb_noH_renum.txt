@@ -1,0 +1,7 @@
+THR     1    THR     1
+LYS     2    LYS     2
+ASN     3    ASN     3
+ASP     4    ASP     4
+THR     5    THR     5
+ASN     6    ASN     6
+PRO     7    PRO     7

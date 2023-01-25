@@ -1,0 +1,33 @@
+#tleap.in
+logFile data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/leap.log
+source libs/forcefields/leaprc.protein.ff14SB_noterminal
+source leaprc.gaff
+ramp=loadpdb data/interim/refactor-test/30/DMSO_GAFF_RESP/0_pre_topology/4amb_noH.pdb
+
+bond ramp.1.N ramp.5.C
+
+saveAmberParm ramp data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_gas.prmtop data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_gas.inpcrd
+
+savepdb ramp data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_gas.pdb
+
+saveMol2 ramp data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_gas.mol2 0
+
+charge ramp
+
+
+
+check ramp
+
+loadoff libs/md_solvents/dmso_gaff_resp/dmsobox.lib
+solvateOct ramp dmsobox 12.0
+
+# add solvent
+# addIonsRand ramp Na+ 19 Cl- 19
+
+#check ramp
+
+saveamberparm ramp data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_sol.prmtop data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_sol.inpcrd
+
+savepdb ramp data/interim/refactor-test/30/DMSO_GAFF_RESP/1_make_topology/mc_sol.pdb
+
+quit

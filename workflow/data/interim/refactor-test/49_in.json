@@ -1,0 +1,1 @@
+{"index": 49, "solvent": "DMSO", "seq_length": 6, "bonds": ["HT"], "sequence": "cyclo-(RGDFPG) cis/trans", "sequence_1": "RGDFPG", "natural_cyclic_peptide": 1, "non_natural_cyclic_peptide": 0, "multi": {"49a": "trans", "49b": "cis"}, "distinction": [3,4]}

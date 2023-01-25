@@ -1,0 +1,26 @@
+
+ NSTEP =     6500   TIME(PS) =      13.000  TEMP(K) =   302.72  PRESS =  -477.5
+ Etot   =     -9701.8451  EKtot   =      1908.4308  EPtot      =    -11610.2760
+ BOND   =       245.3672  ANGLE   =      1070.3396  DIHED      =       314.9232
+ 1-4 NB =        34.4479  1-4 EEL =    -13833.3538  VDWAALS    =     -1558.8824
+ EELEC  =      2101.6128  EHBOND  =         0.0000  RESTRAINT  =        15.2697
+ EAMBER (non-restraint)  =    -11625.5457
+ EKCMT  =       296.1415  VIRIAL  =       650.6712  VOLUME     =     34386.2191
+                                                    Density    =         0.9937
+ Ewald error estimate:   0.4442E-03
+ ------------------------------------------------------------------------------
+| Current Timing Info
+| -------------------
+| Total steps :     10000 | Completed :      6500 | Remaining :      3500
+|
+| Average timings for last    6500 steps:
+|     Elapsed(s) =      62.04 Per Step(ms) =       9.55
+|         ns/day =      18.10   seconds/ns =    4772.64
+|
+| Average timings for all steps:
+|     Elapsed(s) =      62.04 Per Step(ms) =       9.55
+|         ns/day =      18.10   seconds/ns =    4772.64
+|
+|
+| Estimated time remaining:      33.4 seconds.
+ ------------------------------------------------------------------------------

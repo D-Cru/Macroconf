@@ -1,0 +1,86 @@
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/prep to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd to search path.
+-f: Source data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/tleap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/tleap.in
+Log file: ./data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/leap.log
+----- Source: ./libs/forcefields/leaprc.protein.ff14SB_noterminal
+----- Source of ./libs/forcefields/leaprc.protein.ff14SB_noterminal done
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/amino12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminoct12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminont12.lib
+----- Source: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd/leaprc.gaff
+----- Source of /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd/leaprc.gaff done
+Log file: ./leap.log
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+Loading PDB file: ./data/interim/refactor-test/1_2/DMSO_GAFF_RESP/0_pre_topology/4amb_noH.pdb
+  total atoms in file: 110
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 18 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+Writing pdb file: data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/mc_gas.pdb
+Writing mol2 file: data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/mc_gas.mol2
+Total unperturbed charge:   0.000000
+Total perturbed charge:     0.000000
+Checking 'ramp'....
+Checking parameters for unit 'ramp'.
+Checking for bond parameters.
+Checking for angle parameters.
+Unit is OK.
+Loading library: ./libs/md_solvents/dmso_gaff_resp/dmsobox.lib
+Scaling up box by a factor of 1.215740 to meet diagonal cut criterion
+  Solute vdw bounding box:              17.231 15.712 13.141
+  Total bounding box for atom centers:  46.408 46.408 46.408
+      (box expansion for 'iso' is  13.4%)
+  Solvent unit box:                     30.000 30.000 30.000
+  Volume: 53276.359 A^3 (oct)
+  Total mass 21713.352 amu,  Density 0.677 g/cc
+  Added 269 residues.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 18 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	DMS	269
+  )
+ (no restraints)
+Writing pdb file: data/interim/refactor-test/1_2/DMSO_GAFF_RESP/1_make_topology/mc_sol.pdb
+   printing CRYST1 record to PDB file with box info
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.

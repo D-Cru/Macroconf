@@ -1,0 +1,5 @@
+ARG     1    ARG     1
+GLY     2    GLY     2
+ASH     3    ASH     3
+PHE     4    PHE     4
+LYN     5    LYN     5
