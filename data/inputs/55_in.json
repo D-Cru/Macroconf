@@ -1,0 +1,1 @@
+{"index": 55, "seq_length": 10, "bonds": ["HT"], "sequence": "cyclo-[Ser-Tyr-Ser-Met-Glu-His-Phe-Arg-Trp-Gly]", "sequence_1": "SYSMEHFRWG", "natural_cyclic_peptide": 1, "non_natural_cyclic_peptide": 0, "solvent": "H2O"}

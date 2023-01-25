@@ -1,0 +1,23 @@
+a1,a2,dUP,dLOW
+Arg1 NH, Arg1 Ha,237,215
+Arg1 NH, Arg1 Hb2,411,299
+Arg1 NH, Val5 Ha,237,213
+Arg1 NH, Val5 Hb,384,348
+Arg1 NH, D-Phe4 C1H2,405,300
+Arg1 Ha, Arg1 Hb1 proS,252,228
+Arg1 Ha, Arg1 Hb1 proR,252,228
+Gly2 NH, Asp3 NH,273,247
+Gly2 NH, Gly2 Ha2,315,225
+Gly2 NH, Arg1 Hb2,295,205
+Asp3 NH, D-Phe4 NH,242,200
+Asp3 NH, Asp3 Ha,289,263
+Asp3 NH, Asp3 Hb proR,326,294
+Asp3 NH, Asp3 Hb proS,326,294
+Asp3 NH, Arg1 Hb2,415,283
+Asp3 Ha, Asp3 Hb proR,284,257
+Asp3 Ha, Asp3 Hb proS,284,257
+D-Phe4 NH, Asp3 Ha,281,255
+D-Phe4 NH, D-Phe4 Ha,309,279
+o-Phe4 NH, D-Phe4 C1H2,329,220
+Val5 Ha, D-Phe4 C1H2,324,234
+Val5 Ha, Val5 Hb,264,238

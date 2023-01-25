@@ -1,0 +1,91 @@
+name: CI
+
+on: [push]
+
+env:
+  SNAKEMAKE_CONDA_PREFIX: /usr/share/miniconda/envs/
+  
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+  
+jobs:     
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Cache
+        uses: actions/cache@v3.0.11
+        with:
+          # List of files, dirs, etc. to cache:
+          path: |
+            /usr/share/miniconda/envs
+          # key for restoring / saving cache:
+          key: ${{ runner.os }}-conda-envs-${{hashFiles('workflow/envs/*.y*ml')}}
+          restore-keys: |
+            ${{ runner.os }}-conda-envs-
+        id: cache
+      
+      - name: Setup mamba
+        run: |
+          export PATH="/usr/share/miniconda/bin:$PATH"
+          conda config --set channel_priority strict
+          conda install -c conda-forge -q mamba
+          # ensure that mamba is happy to write into the cache
+          sudo chown -R runner:docker /usr/share/miniconda/pkgs/cache
+        
+      - name: Setup Snakemake environment
+        run: |
+          cd workflow
+          export PATH="/usr/share/miniconda/bin:$PATH"
+          mamba env update -q --name macroconf_tests --file envs/test_environment.yml
+          mamba env update -q --name snakemake --file envs/snakemake.yaml
+        
+        
+      - name: Setup conda environments
+        run: |
+          # Create all required Snakemake conda environments
+          # activate conda env
+          export PATH="/usr/share/miniconda/bin:$PATH"
+          source activate snakemake
+          snakemake --conda-create-envs-only --use-conda -j2 --conda-frontend mamba
+        
+          
+      - name: List conda environments
+        run: |
+          conda env list
+          
+      - name: Run tests
+        env:
+          CI: true
+        run: |
+          # activate conda test env
+          export PATH="/usr/share/miniconda/bin:$PATH"
+          source activate macroconf_tests
+          cd workflow
+          pytest -v tests
+        continue-on-error: true
+
+  formatting:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v3
+     
+     - name: Setup black environment
+       run: |
+         conda create -c conda-forge -y -q --name black black black-jupyter
+         
+     - name: Check formatting
+       run: |
+         export PATH="/usr/share/miniconda/bin:$PATH"
+         source activate black
+         black --check --diff workflow/src workflow/tests workflow/scripts workflow/notebooks
+     
+     - name: Comment PR
+       if: github.event_name == 'pull_request' && failure()
+       uses: marocchino/sticky-pull-request-comment@v2.2.1
+       with:
+         message: 'Please format your code with [black](https://black.readthedocs.io): `black snakemake tests/*.py`.'
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,1 @@
+{"index": 22, "seq_length": 5, "bonds": ["HT"], "sequence": "cyclo-(-Ser-Pro-Leu-Asn-Asp-)", "sequence_1": "SPLND", "natural_cyclic_peptide": 1, "non_natural_cyclic_peptide": 0, "solvent": "DMSO", "smile": "N2[C@@]([H])(CO)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@@]([H])(CC(=O)O)C2(=O)"}

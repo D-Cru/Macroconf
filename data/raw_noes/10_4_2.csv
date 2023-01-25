@@ -1,0 +1,27 @@
+a1,a2,Upper bound
+Res3 HA,Res4 HN,2.7
+Res1 HB#,Res1 HA,2.7
+Res3 HB#,Res3 HA,2.7
+Res1 HN,Res1 HA,2.7
+Res1 HB#,Res1 HA,2.7
+Res2 HN,Res1 HA,2.7
+Res1 HN,Res4 HN,2.7
+Res3 HA,Res2 HT,2.7
+Res4 HA,Res1 HN,2.7
+Res1 HN,Res2 HT,2.7
+Res1 HB#,Res2 HN,3.5
+Res4 HA,Res4 HN,3.5
+Res1 HE3,Res1 HA,3.5
+Res1 HB#,Res1 HE3,3.5
+Res1 HN,Res2 HN,3.5
+Res1 HB#,Res1 HN,3.5
+Res2 HN,Res2 HA,3.5
+Res1 HB#,Res1 HN,3.5
+Res1 HB#,Res2 HN,3.5
+Res1 HB#,Res1 HE3,3.5
+Res2 HB,Res2 HA,3.5
+Res2 HB,Res2 HN,3.5
+Res2 HB,Res2 HT,3.5
+Res2 HT,Res2 HA,3.5
+Res4 HA,Res3 HA,4.5
+Res2 HT,Res1 HA,4.5
