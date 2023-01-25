@@ -48,3 +48,8 @@ sphinx:
 
 launch_buttons:
   thebe                  : false
+
+html:
+    extra_footer: |
+      <script data-goatcounter=“https://ddc.goatcounter.com/count”
+        async src=“//gc.zgo.at/count.js”></script>
