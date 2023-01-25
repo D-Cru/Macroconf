@@ -119,3 +119,6 @@ report.html
 
 # ignore unused data
 workflow/data/*/unused_simulations/
+
+# ignore omega outputs for now
+**/omega/

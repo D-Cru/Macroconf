@@ -1,0 +1,3 @@
+readdata data/interim/tests/22/Chloroform/9_aMD_cMD/2/0/5533eac97a4904d4_md.out name mdout 
+writedata data/interim/tests/22/Chloroform/9_aMD_cMD/2/0/5533eac97a4904d4_Epot.dat mdout[EPtot] time 0.0002 
+writedata data/interim/tests/22/Chloroform/9_aMD_cMD/2/0/5533eac97a4904d4_Edih.dat mdout[DIHED] time 0.0002 

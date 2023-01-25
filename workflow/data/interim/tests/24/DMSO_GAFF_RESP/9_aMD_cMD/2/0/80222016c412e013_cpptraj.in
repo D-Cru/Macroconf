@@ -1,0 +1,3 @@
+readdata data/interim/tests/24/DMSO_GAFF_RESP/9_aMD_cMD/2/0/80222016c412e013_md.out name mdout 
+writedata data/interim/tests/24/DMSO_GAFF_RESP/9_aMD_cMD/2/0/80222016c412e013_Epot.dat mdout[EPtot] time 0.0002 
+writedata data/interim/tests/24/DMSO_GAFF_RESP/9_aMD_cMD/2/0/80222016c412e013_Edih.dat mdout[DIHED] time 0.0002 

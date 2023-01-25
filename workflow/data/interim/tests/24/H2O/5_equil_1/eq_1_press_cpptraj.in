@@ -1,0 +1,2 @@
+readdata data/interim/tests/24/H2O/5_equil_1/eq_1.out name mdout 
+writedata data/interim/tests/24/H2O/5_equil_1/eq_1_press.dat mdout[PRESS] time 0.002

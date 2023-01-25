@@ -1,0 +1,2 @@
+readdata data/interim/tests/24/H2O/4_minim_3/em_3.out name mdout 
+writedata data/interim/tests/24/H2O/4_minim_3/em_3_Epot.dat mdout[EPtot] time 0.002

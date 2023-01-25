@@ -1,0 +1,17 @@
+#Interface settings
+
+#Mode flipper
+-in  data/interim/tests/24/smile.smi
+#-molNames  
+-out  data/interim/tests/24/flipped.smi
+-prefix  data/interim/tests/24/
+#-progress  0
+
+#Flipper Options :   
+    #-enumBridgehead  false
+    #-enumEZ  false
+    #-enumNitrogen  false
+    #-enumRS  false
+    #-enumSpecifiedStereo  false
+    #-maxCenters  12
+    #-warts  false

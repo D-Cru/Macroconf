@@ -1,0 +1,97 @@
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/prep to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm to search path.
+-I: Adding /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/cmd to search path.
+-f: Source data/interim/tests/22/Chloroform/1_make_topology/tleap.in.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./data/interim/tests/22/Chloroform/1_make_topology/tleap.in
+Log file: ./data/interim/tests/22/Chloroform/1_make_topology/leap.log
+----- Source: ./libs/forcefields/leaprc.protein.ff14SB_noterminal
+----- Source of ./libs/forcefields/leaprc.protein.ff14SB_noterminal done
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/amino12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminoct12.lib
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/aminont12.lib
+Loading parameters: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/parm/frcmod.chcl3
+Reading force field modification type file (frcmod)
+Reading title:
+ chloroform frcmod file
+Loading PDB file: ./data/interim/tests/22/Chloroform/0_pre_topology/4amb_noH.pdb
+  total atoms in file: 37
+  Leap added 33 missing atoms according to residue templates:
+       33 H / lone pairs
+Checking Unit.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+The unperturbed charge of the unit (-1.000000) is not zero.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 13 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+Writing pdb file: data/interim/tests/22/Chloroform/1_make_topology/mc_gas.pdb
+Writing mol2 file: data/interim/tests/22/Chloroform/1_make_topology/mc_gas.mol2
+Total unperturbed charge:  -1.000000
+Total perturbed charge:    -1.000000
+Checking 'ramp'....
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+The unperturbed charge of the unit (-1.000000) is not zero.
+Checking parameters for unit 'ramp'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 1
+Unit is OK.
+Loading library: /sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/dat/leap/lib/chcl3box.off
+Scaling up box by a factor of 1.203821 to meet diagonal cut criterion
+  Solute vdw bounding box:              13.629 15.566 9.123
+  Total bounding box for atom centers:  44.458 44.458 44.458
+      (box expansion for 'iso' is  22.3%)
+  Solvent unit box:                     56.496 56.496 56.496
+  Volume: 46966.499 A^3 (oct)
+  Total mass 31083.752 amu,  Density 1.099 g/cc
+  Added 256 residues.
+Checking Unit.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Warning!
+The unperturbed charge of the unit (-1.000000) is not zero.
+
+/sbcb/packages/opt/Linux_x86_64/amber/19/Jan2020/amber18/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 13 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+Writing pdb file: data/interim/tests/22/Chloroform/1_make_topology/mc_sol.pdb
+   printing CRYST1 record to PDB file with box info
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 2.

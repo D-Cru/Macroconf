@@ -1,0 +1,1 @@
+{"index": 24, "solvent": "DMSO", "seq_length": 6, "bonds": ["HT"], "sequence": "cyclo-(-Ser-Pro-Leu-Asn-Val-Asp-)", "sequence_1": "SPLNVD", "natural_cyclic_peptide": 1, "non_natural_cyclic_peptide": 0, "multi": {"24a": "trans", "24b": "cis"}, "distinction": [0,1]}
