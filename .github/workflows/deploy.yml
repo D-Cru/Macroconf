@@ -4,7 +4,8 @@ on:
   # Trigger the workflow on push to main branch
   push:
     branches:
-      - ${{ github.event.repository.default_branch }}
+      - public
+      - private
 
       
 concurrency: 
