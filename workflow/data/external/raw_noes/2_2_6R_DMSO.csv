@@ -1,0 +1,27 @@
+a1,a2,dUP
+bhPhe Ha,bhPhe HN,3.5
+bhPhe Hb,bhPhe HN,3.5
+bhPhe Ha,bhPhe Hb,3.5
+bhPhe Ha,bhPhe Hb*(backbone-CH2),2.5
+bhPhe HN,bhPhe Hb*(backbone-CH2),3.5
+Phe Ha,Phe HN,3.5
+Phe Hb,Phe HN,2.5
+Phe Ha,Phe Hb,2.5
+R-Asu Ha,R-Asu HN,3.5
+R-Asu Hb,R-Asu HN,5.0
+R-Asu Ha,R-Asu Hb,3.5
+R-Asu Ha,bhPhe HN,2.5
+R-Pro Ha,R-Asu HN,3.5
+bhPhe Hb,Phe HN,3.5
+R-Pro Hb,R-Asu HN,5.0
+R-Asu HN,bhPhe HN,2.5
+bhPhe HN,Phe HN,5.0
+bhPhe Hb*(backbone-CH2),Phe HN,2.5
+Phe Ha,R-Pro Hd,2.5
+Phe Hb,R-Pro Hd,5.0
+R-Pro Hy,R-Asu HN,5.0
+R-Pro Hd,R-Asu HN,3.5
+Phe Ha,R-Asu HN,5.0
+Phe HN,R-Asu HN,5.0
+bhPhe Ha,R-Asu HN,5.0
+Phe Ha,bhPhe HN,5.0

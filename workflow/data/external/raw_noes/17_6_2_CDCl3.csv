@@ -1,0 +1,62 @@
+a1,a2,dUP
+resi 1 HA,resi 1 HN,3.5
+resi 1 HN,resi 2 HI*,6.0
+resi 1 HN,resi 6 HI*,5.0
+resi 1 HN,resi 4 HN,6.0
+resi 1 HA,resi 2 HI*,4.2
+resi 1 HA,resi 1 HB1,3.5
+resi 1 HA,resi 1 HB2,3.5
+resi 1 HA,resi 1 HG,5.0
+resi 1 HA,resi 1 HD1*,5.0
+resi 2 HA,resi 4 HN,6.0
+resi 2 HA,resi 3 HI*,3.5
+resi 2 HA,resi 2 HB2,3.5
+resi 2 HA,resi 2 HB1,5.0
+resi 2 HA,resi 2 HG,5.0
+resi 2 HA,resi 2 HD1*,6.0
+resi 2 HA,resi 2 HD2*,6.0
+resi 2 HI*,resi 2 HB*,6.0
+resi 3 HA,resi 4 HN,5.0
+resi 3 HA,resi 3 HB1,3.5
+resi 3 HA,resi 3 HB2,6.0
+resi 3 HA,resi 3 HG,6.0
+resi 3 HA,resi 3 HD1*,6.0
+resi 3 HA,resi 3 HD2*,6.0
+resi 3 HI*,resi 2 HB*,6.0
+resi 3 HI*,resi 2 HD1*,6.0
+resi 4 HA,resi 4 HN,3.5
+resi 4 HN,resi 3 HI*,4.5
+resi 4 HN,resi 4 HG,6.0
+resi 4 HA,resi 5 HD1,3.5
+resi 4 HA,resi 5 HD2,3.5
+resi 4 HA,resi 4 HB2,3.5
+resi 4 HA,resi 4 HB1,5.0
+resi 4 HA,resi 4 HG,6.0
+resi 4 HA,resi 4 HD1*,6.0
+resi 5 HA,resi 6 HI*,3.0
+resi 5 HA,resi 5 HG*,6.0
+resi 5 HA,resi 5 HB1,3.0
+resi 5 HA,resi 5 HB2,3.5
+resi 5 HD2,resi 4 HD1*,6.0
+resi 6 HA,resi 1 HN,4.0
+resi 6 HA,resi 6 HE*,6.0
+resi 6 HA,resi 6 HD*,4.2
+resi 6 HB*,resi 6 HD*,5.0
+resi 6 HI*,resi 6 HD*,6.0
+resi 6 HB*,resi 6 HD*,6.0
+resi 6 HA,resi 6 HB1,3.5
+resi 6 HA,resi 6 HB2,6.0
+resi 6 HA,resi 2 HI*,7.0
+resi 6 HA,resi 6 HI*,6.0
+resi 6 HI*,resi 5 HB*,7.0
+resi 6 HD*,resi 5 HB*,6.0
+resi 6 HE*,resi 5 HB*,6.0
+
+
+
+!H-­‐Bonds
+
+resid 1 O, resid 4 HN, 1.88, 0.3, 0.42
+resid 1 O, resid 4 N ,2.88 ,0.3 ,0.3
+resid 4 O, resid 1 HN, 1.88, 0.3, 0.42
+resid 4 O, resid 1 N ,2.88 ,0.3 ,0.3
