@@ -1,5 +1,5 @@
-[![Jupter Book](https://github.com/d-cru/03_macroconf/actions/workflows/deploy.yml/badge.svg)](https://github.com/d-cru/03_macroconf/actions/deploy.yml)
-[![Unit tests](https://github.com/D-Cru/03_macroconf/actions/workflows/main.yml/badge.svg)](https://github.com/D-Cru/03_macroconf/actions/workflows/main.yml)
+[![Jupter Book](https://github.com/D-Cru/macroconf/actions/workflows/deploy.yml/badge.svg)](https://github.com/d-cru/macroconf/actions/deploy.yml)
+[![Unit tests](https://github.com/D-Cru/macroconf/actions/workflows/main.yml/badge.svg)](https://github.com/D-Cru/macroconf/actions/workflows/main.yml)
 
 # MacroConf - dataset & workflows for cyclic peptide solutions structure conformer generators
 
@@ -21,11 +21,11 @@ Welcome to MacroConf. This repository contains the MacroConf dataset and associa
 
 # Readme Contents
 
-- [MacroConf - dataset & workflows for cyclic peptide solutions structure conformer generators](#macroconf---dataset--workflows-for-cyclic-peptide-solutions-structure-conformer-generators)
+- [MacroConf - dataset \& workflows for cyclic peptide solutions structure conformer generators](#macroconf---dataset--workflows-for-cyclic-peptide-solutions-structure-conformer-generators)
 - [Documentation References](#documentation-references)
 - [Readme Contents](#readme-contents)
 - [Getting started](#getting-started)
-  - [Explore the dataset & code in the browser](#explore-the-dataset--code-in-the-browser)
+  - [Explore the dataset \& code in the browser](#explore-the-dataset--code-in-the-browser)
   - [Download workflow with 2 example compounds](#download-workflow-with-2-example-compounds)
   - [Download workflow with all results](#download-workflow-with-all-results)
   - [Using the MacroConf workflows](#using-the-macroconf-workflows)
