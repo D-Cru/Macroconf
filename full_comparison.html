@@ -1,0 +1,853 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Comparison of MD simulations &amp; Conformer generators for the whole dataset &#8212; MacroConf</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.1. Method Comparison" href="links/28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp.html" />
+    <link rel="prev" title="3.8. Single compound comparisons" href="links/9e61be229abfc57f_13c5dee00c76dc47_13c5dee00c76dc47_0_0_compar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MacroConf</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    MacroConf – Dataset & Workflows to assess cyclic peptide solution structures
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="links/dataset.html">
+   1. The MacroConf dataset
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="single.html">
+   2. Analysis notebooks of single MD runs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/210a1ea8aa678b16_GaMD_processed.html">
+     2.1. 22-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/586db4c575bef492_cMD_processed.html">
+     2.2. 22-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/3595ce0609206d95_aMD_processed.html">
+     2.3. 22-H2O-aMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/583fbeed838cced5_GaMD_processed.html">
+     2.4. 22-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5405e3b785af9601_GaMD_processed.html">
+     2.5. 22-Chloroform-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/c5389d15c56a3655_GaMD_processed.html">
+     2.6. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/4f386944d88e6ef8_GaMD_processed.html">
+     2.7. 24-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/c99bbf5d17e8efb9_cMD_processed.html">
+     2.8. 24-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/374722583485687f_GaMD_processed.html">
+     2.9. 33-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/344b9e878043dfcf_cMD_processed.html">
+     2.10. 33-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/9e61be229abfc57f_GaMD_processed.html">
+     2.11. 49-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/13c5dee00c76dc47_cMD_processed.html">
+     2.12. 49-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/9f59bd3ed468e53f_GaMD_processed.html">
+     2.13. 50-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/8d76713ef414e389_cMD_processed.html">
+     2.14. 50-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/2f74eee1c02ff2a9_GaMD_processed.html">
+     2.15. 51-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/ff5c2026bb8cfce8_cMD_processed.html">
+     2.16. 51-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/28159d44aa267024_GaMD_processed.html">
+     2.17. 55-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5ead922859f5c96d_cMD_processed.html">
+     2.18. 55-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/250c26e1ba562237_GaMD_processed.html">
+     2.19. 56-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/eff35c6c3e18f0a3_cMD_processed.html">
+     2.20. 56-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/12cee40b82354fab_GaMD_processed.html">
+     2.21. 57-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5dc9eaf6e041f3f2_cMD_processed.html">
+     2.22. 57-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/d6072f62493cc5af_GaMD_processed.html">
+     2.23. 58-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/f9df090456539245_cMD_processed.html">
+     2.24. 58-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/39f5beb490ee4833_GaMD_processed.html">
+     2.25. 59-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/cc9e4f8eb83eb5e7_cMD_processed.html">
+     2.26. 59-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/610cc1e1311c2792_GaMD_processed.html">
+     2.27. 60-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/36cc5f966dea67cb_cMD_processed.html">
+     2.28. 60-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5061cfcd53f488df_GaMD_processed.html">
+     2.29. 61-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/167326bf49040dbd_cMD_processed.html">
+     2.30. 61-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/ed2e9ab42cf3819c_GaMD_processed.html">
+     2.31. 62-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/474e13185acfa1a8_cMD_processed.html">
+     2.32. 62-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/d3aa194ff18a9e75_GaMD_processed.html">
+     2.33. 63-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/8db033dcdd7bf626_cMD_processed.html">
+     2.34. 63-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/eab37e4b3e032de2_GaMD_processed.html">
+     2.35. 64-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/811158a8b531154d_cMD_processed.html">
+     2.36. 64-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/7b17fe71946f4dd7_GaMD_processed.html">
+     2.37. 65-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/45750abf2112f0e2_cMD_processed.html">
+     2.38. 65-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/bd34df1820fd3dd0_GaMD_processed.html">
+     2.39. 66-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/8b69117d53937901_cMD_processed.html">
+     2.40. 66-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/cd3179da84da7836_GaMD_processed.html">
+     2.41. 68-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/11a7fb1e6aad7905_cMD_processed.html">
+     2.42. 68-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/f2825d3690a271d0_cMD_processed.html">
+     2.43. 1_1-Chloroform-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/c1d9e06a52efb84d_GaMD_processed.html">
+     2.44. 1_1-Chloroform-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/421b10c8566b49cb_cMD_processed.html">
+     2.45. 1_2-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/8ca570a3bee4327e_GaMD_processed.html">
+     2.46. 1_2-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/79804846e6901cf6_cMD_processed.html">
+     2.47. 22-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/2f45361261b805e5_cMD_processed.html">
+     2.48. 24-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/069cca5a0bbb1937_GaMD_processed.html">
+     2.49. 24-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/334abba1d29a4378_cMD_processed.html">
+     2.50. 27-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/8b6552e2914a062f_GaMD_processed.html">
+     2.51. 27-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/74633fb83c0d5f89_cMD_processed.html">
+     2.52. 28-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/babaf70b2b786682_GaMD_processed.html">
+     2.53. 28-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/c4209a995bd14e57_cMD_processed.html">
+     2.54. 29-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/467c506b6744c831_GaMD_processed.html">
+     2.55. 29-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/126bbd887309df40_cMD_processed.html">
+     2.56. 30-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/58f55feb935887fb_GaMD_processed.html">
+     2.57. 30-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/d1d453ef88c14913_cMD_processed.html">
+     2.58. 31-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/7d461adf7ab73336_GaMD_processed.html">
+     2.59. 31-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/fa08f684840cbc89_cMD_processed.html">
+     2.60. 32-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/b97accb0b36736bf_GaMD_processed.html">
+     2.61. 32-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/a03586fd58d627cd_cMD_processed.html">
+     2.62. 33-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/d13fd5c825a5a7e9_GaMD_processed.html">
+     2.63. 33-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/ae86721015402cfa_cMD_processed.html">
+     2.64. 35-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/6621b58bd327078d_GaMD_processed.html">
+     2.65. 35-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/13607ce653c1715e_cMD_processed.html">
+     2.66. 36-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/2cfb6b191b7a46f2_GaMD_processed.html">
+     2.67. 36-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/439e771e612e69f6_cMD_processed.html">
+     2.68. 38-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/ae576072a28ef51e_GaMD_processed.html">
+     2.69. 38-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/30d5ac208620d9ce_cMD_processed.html">
+     2.70. 39-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/b29633ebde708f87_GaMD_processed.html">
+     2.71. 39-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/4e7bd481d58354ec_cMD_processed.html">
+     2.72. 40-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5450f25d2ed9c22a_GaMD_processed.html">
+     2.73. 40-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/152ec36e3269fbd5_cMD_processed.html">
+     2.74. 41-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/4f62f5b571b6109b_GaMD_processed.html">
+     2.75. 41-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/e3a36fd0612b2ce3_cMD_processed.html">
+     2.76. 42-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/195d188bbd583ece_GaMD_processed.html">
+     2.77. 42-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/b0163eba7e6d9b80_cMD_processed.html">
+     2.78. 49-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5b93caea6ecd1712_GaMD_processed.html">
+     2.79. 49-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/4b93d27539017144_cMD_processed.html">
+     2.80. 50-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5d2ce3dc4525e24d_GaMD_processed.html">
+     2.81. 50-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/26e5e96f1ec47099_cMD_processed.html">
+     2.82. 51-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5c9adcde9c03b8b1_GaMD_processed.html">
+     2.83. 51-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/777fb4f8db256554_cMD_processed.html">
+     2.84. 52-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/5cc032301cb44666_GaMD_processed.html">
+     2.85. 52-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/41d574d4866a27a1_GaMD_processed.html">
+     2.86. 22-DMSO_GAFF_RESP-GaMD-2000-1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/18de159d9165a31e_GaMD_processed.html">
+     2.87. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/ee0ed163301c7cbf_GaMD_processed.html">
+     2.88. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="manual_comparison.html">
+   3. Comparison of MD simulations for single compounds
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/28159d44aa267024_5ead922859f5c96d_5ead922859f5c96d_0_0_compar.html">
+     3.1. Compound 55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/250c26e1ba562237_eff35c6c3e18f0a3_eff35c6c3e18f0a3_0_0_compar.html">
+     3.2. Compound 56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/210a1ea8aa678b16_3595ce0609206d95_586db4c575bef492_0_0_compar.html">
+     3.3. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_0_0_compar.html">
+     3.4. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_omega_basic_rdkit_ETKDGv3mmff_compar.html">
+     3.5. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/210a1ea8aa678b16_c5389d15c56a3655_3a8c4367deb63d6e_0_0_compar.html">
+     3.6. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/4f386944d88e6ef8_c99bbf5d17e8efb9_c99bbf5d17e8efb9_0_0_compar.html">
+     3.7. Compound 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/9e61be229abfc57f_13c5dee00c76dc47_13c5dee00c76dc47_0_0_compar.html">
+     3.8. Compound 49
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   4. Comparison of MD simulations &amp; Conformer generators for the whole dataset
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="links/28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp.html">
+     4.1. Method Comparison
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/full_comparison.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Comparison of MD simulations & Conformer generators for the whole dataset</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="comparison-of-md-simulations-conformer-generators-for-the-whole-dataset">
+<h1><span class="section-number">4. </span>Comparison of MD simulations &amp; Conformer generators for the whole dataset<a class="headerlink" href="#comparison-of-md-simulations-conformer-generators-for-the-whole-dataset" title="Permalink to this headline">#</a></h1>
+<p>This is the full comparison of the results of the MacroConf dataset.
+The MD simulations are compared to one another, to the cheminformatics
+conformer generators, and to the experimental data.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="links/9e61be229abfc57f_13c5dee00c76dc47_13c5dee00c76dc47_0_0_compar.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3.8. </span>Single compound comparisons</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="links/28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Method Comparison</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Daniel Crusius<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <script data-goatcounter=“https://ddc.goatcounter.com/count”
+  async src=“//gc.zgo.at/count.js”></script>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

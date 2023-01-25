@@ -1,0 +1,1492 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>1. The MacroConf dataset &#8212; MacroConf</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Analysis notebooks of single MD runs" href="../single.html" />
+    <link rel="prev" title="MacroConf – Dataset &amp; Workflows to assess cyclic peptide solution structures" href="../index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MacroConf</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    MacroConf – Dataset & Workflows to assess cyclic peptide solution structures
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. The MacroConf dataset
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../single.html">
+   2. Analysis notebooks of single MD runs
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210a1ea8aa678b16_GaMD_processed.html">
+     2.1. 22-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="586db4c575bef492_cMD_processed.html">
+     2.2. 22-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3595ce0609206d95_aMD_processed.html">
+     2.3. 22-H2O-aMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="583fbeed838cced5_GaMD_processed.html">
+     2.4. 22-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5405e3b785af9601_GaMD_processed.html">
+     2.5. 22-Chloroform-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c5389d15c56a3655_GaMD_processed.html">
+     2.6. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4f386944d88e6ef8_GaMD_processed.html">
+     2.7. 24-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c99bbf5d17e8efb9_cMD_processed.html">
+     2.8. 24-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="374722583485687f_GaMD_processed.html">
+     2.9. 33-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="344b9e878043dfcf_cMD_processed.html">
+     2.10. 33-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9e61be229abfc57f_GaMD_processed.html">
+     2.11. 49-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13c5dee00c76dc47_cMD_processed.html">
+     2.12. 49-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9f59bd3ed468e53f_GaMD_processed.html">
+     2.13. 50-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8d76713ef414e389_cMD_processed.html">
+     2.14. 50-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2f74eee1c02ff2a9_GaMD_processed.html">
+     2.15. 51-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ff5c2026bb8cfce8_cMD_processed.html">
+     2.16. 51-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="28159d44aa267024_GaMD_processed.html">
+     2.17. 55-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5ead922859f5c96d_cMD_processed.html">
+     2.18. 55-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="250c26e1ba562237_GaMD_processed.html">
+     2.19. 56-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eff35c6c3e18f0a3_cMD_processed.html">
+     2.20. 56-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12cee40b82354fab_GaMD_processed.html">
+     2.21. 57-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5dc9eaf6e041f3f2_cMD_processed.html">
+     2.22. 57-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="d6072f62493cc5af_GaMD_processed.html">
+     2.23. 58-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f9df090456539245_cMD_processed.html">
+     2.24. 58-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="39f5beb490ee4833_GaMD_processed.html">
+     2.25. 59-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cc9e4f8eb83eb5e7_cMD_processed.html">
+     2.26. 59-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="610cc1e1311c2792_GaMD_processed.html">
+     2.27. 60-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="36cc5f966dea67cb_cMD_processed.html">
+     2.28. 60-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5061cfcd53f488df_GaMD_processed.html">
+     2.29. 61-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="167326bf49040dbd_cMD_processed.html">
+     2.30. 61-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ed2e9ab42cf3819c_GaMD_processed.html">
+     2.31. 62-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="474e13185acfa1a8_cMD_processed.html">
+     2.32. 62-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="d3aa194ff18a9e75_GaMD_processed.html">
+     2.33. 63-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8db033dcdd7bf626_cMD_processed.html">
+     2.34. 63-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="eab37e4b3e032de2_GaMD_processed.html">
+     2.35. 64-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="811158a8b531154d_cMD_processed.html">
+     2.36. 64-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7b17fe71946f4dd7_GaMD_processed.html">
+     2.37. 65-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="45750abf2112f0e2_cMD_processed.html">
+     2.38. 65-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bd34df1820fd3dd0_GaMD_processed.html">
+     2.39. 66-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8b69117d53937901_cMD_processed.html">
+     2.40. 66-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cd3179da84da7836_GaMD_processed.html">
+     2.41. 68-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11a7fb1e6aad7905_cMD_processed.html">
+     2.42. 68-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f2825d3690a271d0_cMD_processed.html">
+     2.43. 1_1-Chloroform-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c1d9e06a52efb84d_GaMD_processed.html">
+     2.44. 1_1-Chloroform-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="421b10c8566b49cb_cMD_processed.html">
+     2.45. 1_2-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8ca570a3bee4327e_GaMD_processed.html">
+     2.46. 1_2-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="79804846e6901cf6_cMD_processed.html">
+     2.47. 22-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2f45361261b805e5_cMD_processed.html">
+     2.48. 24-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="069cca5a0bbb1937_GaMD_processed.html">
+     2.49. 24-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="334abba1d29a4378_cMD_processed.html">
+     2.50. 27-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="8b6552e2914a062f_GaMD_processed.html">
+     2.51. 27-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="74633fb83c0d5f89_cMD_processed.html">
+     2.52. 28-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="babaf70b2b786682_GaMD_processed.html">
+     2.53. 28-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c4209a995bd14e57_cMD_processed.html">
+     2.54. 29-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="467c506b6744c831_GaMD_processed.html">
+     2.55. 29-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="126bbd887309df40_cMD_processed.html">
+     2.56. 30-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="58f55feb935887fb_GaMD_processed.html">
+     2.57. 30-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="d1d453ef88c14913_cMD_processed.html">
+     2.58. 31-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="7d461adf7ab73336_GaMD_processed.html">
+     2.59. 31-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fa08f684840cbc89_cMD_processed.html">
+     2.60. 32-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b97accb0b36736bf_GaMD_processed.html">
+     2.61. 32-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a03586fd58d627cd_cMD_processed.html">
+     2.62. 33-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="d13fd5c825a5a7e9_GaMD_processed.html">
+     2.63. 33-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ae86721015402cfa_cMD_processed.html">
+     2.64. 35-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6621b58bd327078d_GaMD_processed.html">
+     2.65. 35-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13607ce653c1715e_cMD_processed.html">
+     2.66. 36-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2cfb6b191b7a46f2_GaMD_processed.html">
+     2.67. 36-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="439e771e612e69f6_cMD_processed.html">
+     2.68. 38-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ae576072a28ef51e_GaMD_processed.html">
+     2.69. 38-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="30d5ac208620d9ce_cMD_processed.html">
+     2.70. 39-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b29633ebde708f87_GaMD_processed.html">
+     2.71. 39-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4e7bd481d58354ec_cMD_processed.html">
+     2.72. 40-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5450f25d2ed9c22a_GaMD_processed.html">
+     2.73. 40-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="152ec36e3269fbd5_cMD_processed.html">
+     2.74. 41-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4f62f5b571b6109b_GaMD_processed.html">
+     2.75. 41-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="e3a36fd0612b2ce3_cMD_processed.html">
+     2.76. 42-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="195d188bbd583ece_GaMD_processed.html">
+     2.77. 42-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b0163eba7e6d9b80_cMD_processed.html">
+     2.78. 49-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5b93caea6ecd1712_GaMD_processed.html">
+     2.79. 49-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4b93d27539017144_cMD_processed.html">
+     2.80. 50-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5d2ce3dc4525e24d_GaMD_processed.html">
+     2.81. 50-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="26e5e96f1ec47099_cMD_processed.html">
+     2.82. 51-DMSO_GAFF_RESP-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5c9adcde9c03b8b1_GaMD_processed.html">
+     2.83. 51-DMSO_GAFF_RESP-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="777fb4f8db256554_cMD_processed.html">
+     2.84. 52-H2O-cMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="5cc032301cb44666_GaMD_processed.html">
+     2.85. 52-H2O-GaMD-2000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="41d574d4866a27a1_GaMD_processed.html">
+     2.86. 22-DMSO_GAFF_RESP-GaMD-2000-1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="18de159d9165a31e_GaMD_processed.html">
+     2.87. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ee0ed163301c7cbf_GaMD_processed.html">
+     2.88. 22-H2O-GaMD-1000-0
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../manual_comparison.html">
+   3. Comparison of MD simulations for single compounds
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="28159d44aa267024_5ead922859f5c96d_5ead922859f5c96d_0_0_compar.html">
+     3.1. Compound 55
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="250c26e1ba562237_eff35c6c3e18f0a3_eff35c6c3e18f0a3_0_0_compar.html">
+     3.2. Compound 56
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210a1ea8aa678b16_3595ce0609206d95_586db4c575bef492_0_0_compar.html">
+     3.3. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_0_0_compar.html">
+     3.4. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210a1ea8aa678b16_583fbeed838cced5_5405e3b785af9601_omega_basic_rdkit_ETKDGv3mmff_compar.html">
+     3.5. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="210a1ea8aa678b16_c5389d15c56a3655_3a8c4367deb63d6e_0_0_compar.html">
+     3.6. Compound 22
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="4f386944d88e6ef8_c99bbf5d17e8efb9_c99bbf5d17e8efb9_0_0_compar.html">
+     3.7. Compound 24
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="9e61be229abfc57f_13c5dee00c76dc47_13c5dee00c76dc47_0_0_compar.html">
+     3.8. Compound 49
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../full_comparison.html">
+   4. Comparison of MD simulations &amp; Conformer generators for the whole dataset
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="28159d44aa267024-native-586db4c575bef492-native_omega-basic-rdkit-ETKDGv3mmff-NOE_method_comp.html">
+     4.1. Method Comparison
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/d-cru/Macroconf/main?urlpath=tree/workflow/reports/jb/links/dataset.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/links/dataset.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The MacroConf dataset</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-macroconf-dataset">
+<h1><span class="section-number">1. </span>The MacroConf dataset<a class="headerlink" href="#the-macroconf-dataset" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;../data/external/22-09-2021_MacroConf-v2.1/MacroConf-data.xlsx&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The below figure is interactive. Hover over the molecule images to get more information about a specific molecule. Clicking on a molecule keeps this view open, e.g. to copy the paper reference. At the bottom (might have to scroll down slightly), the dataset can be sorted by different properties. To first see all natural cyclic peptides, one could sort by ‘is natural cyclic peptide’ in descending order.</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "758276cb5e364e0ea4600687a511cbbd", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><iframe class="mols2grid-iframe" frameborder="0" width="100%"
+
+height="200"
+
+
+allow="clipboard-write"
+
+srcdoc="&lt;html&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+    #mols2grid.gridcontainer {
+    display: block;
+    padding-left: 1em;
+    max-width: 620px;
+    width: 620px;
+}
+#mols2grid .cell {
+    border: 1px solid #cccccc;
+    text-align: center;
+    vertical-align: top;
+    max-width: 120px;
+    width: 120px;
+    font-family: &#x27;DejaVu&#x27;, sans-serif;
+    font-size: 12pt;
+    padding: 0;
+    margin: 0px;
+    float: left;
+}
+#mols2grid .cell:hover {
+    background-color: #e7e7e7 !important;
+}
+#mols2grid .cell .data-img {
+    padding: 0;
+    margin: 0;
+}
+#mols2grid .cell img, #mols2grid .cell svg {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+}
+#mols2grid .data {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+}
+#mols2grid .arrow-asc:after {
+    content: &#x27;↑&#x27;;
+    text-align: right;
+    float:right;
+}
+#mols2grid .arrow-desc:after {
+    content: &#x27;↓&#x27;;
+    text-align: right;
+    float:right;
+}
+    /* custom CSS */
+
+    &lt;/style&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.6.0.min.js&quot; integrity=&quot;sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    function fit_height(obj) {
+        obj.style.height = 0;
+        var height = obj.contentDocument.body.scrollHeight + 18 + &#x27;px&#x27;;
+        obj.style.height = height;
+    }
+&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css&quot; integrity=&quot;sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l&quot; crossorigin=&quot;anonymous&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@rdkit/rdkit@2022.3.1/Code/MinimalLib/dist/RDKit_minimal.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- custom header --&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;mols2grid&quot; class=&quot;gridcontainer grid-default&quot;&gt;
+      &lt;div class=&quot;row mb-3&quot;&gt;
+        &lt;div class=&quot;list&quot;&gt;&lt;div class=&quot;cell&quot; data-mols2grid-id=&quot;0&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;position-relative float-left cached_checkbox&quot;&gt;&lt;div class=&quot;data data-id&quot;&gt;&lt;/div&gt;&lt;a tabindex=&quot;0&quot; class=&quot;data data-img mols2grid-tooltip&quot; data-toggle=&quot;popover&quot; data-content=&quot;.&quot;&gt;&lt;/a&gt;&lt;div class=&quot;data data-sequence&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-is-natural-cyclic-peptide&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-is-unnatural-cyclic-peptide&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-solvent&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-paper-link&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-type-of-NOE-experiment&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-SMILES&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;d-inline&quot;&gt;
+        &lt;ul class=&quot;pagination float-left&quot;&gt;&lt;/ul&gt;
+        &lt;div id=&quot;controls&quot; class=&quot;d-flex flex-row float-right&quot;&gt;
+
+          &lt;div id=&quot;chkbox-dropdown&quot; class=&quot;dropdown&quot;&gt;
+    &lt;button class=&quot;btn btn-light dropdown-toggle&quot; type=&quot;button&quot; id=&quot;chkboxDropdown&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;☑&lt;/button&gt;
+    &lt;div class=&quot;dropdown-menu&quot; aria-labelledby=&quot;checkboxDropdownMenu&quot;&gt;
+        &lt;button id=&quot;btn-chkbox-all&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Check all&lt;/button&gt;
+        &lt;button id=&quot;btn-chkbox-match&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Check matching&lt;/button&gt;
+        &lt;button id=&quot;btn-chkbox-none&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Uncheck all&lt;/button&gt;
+        &lt;button id=&quot;btn-chkbox-invert&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Invert&lt;/button&gt;
+        &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;
+        &lt;button id=&quot;btn-chkbox-copy&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Copy to clipboard&lt;/button&gt;
+        &lt;button id=&quot;btn-chkbox-dlsmi&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Save SMILES&lt;/button&gt;
+        &lt;button id=&quot;btn-chkbox-dlcsv&quot; class=&quot;dropdown-item&quot; type=&quot;button&quot;&gt;Save CSV&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+          &lt;div id=&quot;sort-dropdown&quot; class=&quot;dropdown pl-2&quot;&gt;
+            &lt;button class=&quot;btn btn-light dropdown-toggle&quot; type=&quot;button&quot; id=&quot;sortDropdown&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;
+              Sort by
+            &lt;/button&gt;
+            &lt;div class=&quot;dropdown-menu&quot; aria-labelledby=&quot;sortDropdownMenu&quot;&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn arrow-asc active&quot; type=&quot;button&quot; data-name=&quot;mols2grid-id&quot;&gt;Index&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-id&quot;&gt;id&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-sequence&quot;&gt;sequence&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-is-natural-cyclic-peptide&quot;&gt;is-natural-cyclic-peptide&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-is-unnatural-cyclic-peptide&quot;&gt;is-unnatural-cyclic-peptide&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-solvent&quot;&gt;solvent&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-paper-link&quot;&gt;paper-link&lt;/button&gt;
+
+
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn &quot; type=&quot;button&quot; data-name=&quot;data-type-of-NOE-experiment&quot;&gt;type-of-NOE-experiment&lt;/button&gt;
+
+
+
+              &lt;button class=&quot;dropdown-item sort-btn&quot; type=&quot;button&quot; data-name=&quot;checkbox&quot;&gt;Selected&lt;/button&gt;
+
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;input-group row pl-4&quot;&gt;
+            &lt;input type=&quot;text&quot; id=&quot;searchbar&quot; class=&quot;form-control&quot; placeholder=&quot;Search&quot; aria-label=&quot;Search&quot; aria-describedby=&quot;basic-addon1&quot;&gt;
+            &lt;div class=&quot;input-group-append&quot;&gt;
+              &lt;button id=&quot;searchBtn&quot; class=&quot;btn btn-light dropdown-toggle&quot; type=&quot;button&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;false&quot;&gt;🔎&lt;/button&gt;
+              &lt;div class=&quot;dropdown-menu dropdown-menu-right&quot;&gt;
+                &lt;button id=&quot;txtSearch&quot; class=&quot;search-btn dropdown-item active&quot;&gt;Text&lt;/button&gt;
+                &lt;button id=&quot;smartsSearch&quot; class=&quot;search-btn dropdown-item&quot;&gt;SMARTS&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+    // list.js
+var listObj = new List(&#x27;mols2grid&#x27;, {
+    valueNames: [{data: [&#x27;mols2grid-id&#x27;]}, &#x27;data-is-natural-cyclic-peptide&#x27;, &#x27;data-type-of-NOE-experiment&#x27;, &#x27;data-is-unnatural-cyclic-peptide&#x27;, &#x27;data-SMILES&#x27;, &#x27;data-sequence&#x27;, &#x27;data-paper-link&#x27;, &#x27;data-id&#x27;, &#x27;data-img&#x27;, &#x27;data-solvent&#x27;, {attr: &#x27;data-content&#x27;, name: &#x27;mols2grid-tooltip&#x27;}],
+    item: &#x27;&lt;div class=&quot;cell&quot; data-mols2grid-id=&quot;0&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;position-relative float-left cached_checkbox&quot;&gt;&lt;div class=&quot;data data-id&quot;&gt;&lt;/div&gt;&lt;a tabindex=&quot;0&quot; class=&quot;data data-img mols2grid-tooltip&quot; data-toggle=&quot;popover&quot; data-content=&quot;.&quot;&gt;&lt;/a&gt;&lt;div class=&quot;data data-sequence&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-is-natural-cyclic-peptide&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-is-unnatural-cyclic-peptide&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-solvent&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-paper-link&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-type-of-NOE-experiment&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;div class=&quot;data data-SMILES&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#x27;,
+    page: 15,
+    pagination: {
+        name: &quot;pagination&quot;,
+        item: &#x27;&lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page page-link&quot; href=&quot;#&quot; onclick=&quot;event.preventDefault()&quot;&gt;&lt;/a&gt;&lt;/li&gt;&#x27;,
+        innerWindow: 1,
+        outerWindow: 1,
+    },
+});
+listObj.remove(&quot;mols2grid-id&quot;, &quot;0&quot;);
+listObj.add([{&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;CCC(C)[C@@H]3NC(=O)[C@@H](CC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H]1CCCN1C(=O)[C@@H](Cc2ccccc2)NC(=O)[C@H](CC(C)C)NC3=O &quot;, &quot;data-sequence&quot;: &quot;Leu-d(Phe)-Pro-Leu-d(Leu)-Ile&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/acsmedchemlett.6b00100&quot;, &quot;data-id&quot;: &quot;1_1&quot;, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;CDCl3&quot;, &quot;mols2grid-id&quot;: 0, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 1_1&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Leu-d(Phe)-Pro-Leu-d(Leu)-Ile&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: CDCl3&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/acsmedchemlett.6b00100&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;CCC(C)[C@@H]3NC(=O)[C@@H](CC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@@H]1CCCN1C(=O)[C@@H](Cc2ccccc2)NC(=O)[C@H](CC(C)C)NC3=O &quot;, &quot;data-sequence&quot;: &quot;Leu-d(Phe)-Pro-Leu-d(Leu)-Ile&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/acsmedchemlett.6b00100&quot;, &quot;data-id&quot;: &quot;1_2&quot;, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 1, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 1_2&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Leu-d(Phe)-Pro-Leu-d(Leu)-Ile&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/acsmedchemlett.6b00100&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;COC(=O)CCCCC[C@H]4NC(=O)[C@H]1CCCN1C(=O)[C@H](Cc2ccccc2)NC(=O)C[C@H](Cc3ccccc3)NC4=O&quot;, &quot;data-sequence&quot;: &quot;Beta H Phe, Phe, R-Pro, R-Asu, (DMSO). In H2O: R-Asu: more soluble free acid!&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/ja029205t &quot;, &quot;data-id&quot;: 2, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO; 90% H2O 10% CD3CN&quot;, &quot;mols2grid-id&quot;: 2, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 2&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Beta H Phe, Phe, R-Pro, R-Asu, (DMSO). In H2O: R-Asu: more soluble free acid!&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO; 90% H2O 10% CD3CN&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/ja029205t &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;COC(=O)CCCCC[C@@H]4NC(=O)[C@H]1CCCN1C(=O)[C@H](Cc2ccccc2)NC(=O)C[C@H](Cc3ccccc3)NC4=O&quot;, &quot;data-sequence&quot;: &quot;Beta Phe, Phe, R-Pro, S-Asu&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/ja029205t &quot;, &quot;data-id&quot;: 3, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 3, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 3&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Beta Phe, Phe, R-Pro, S-Asu&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/ja029205t &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC4NC(=O)C(CC(C)C)NC(=O)C[C@@H]([C@H]2O[C@@H]1OC(C)(C)O[C@@H]1[C@H]2OCc3ccccc3)NC(=O)C(CCSC)NC4=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 4, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 4, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 4&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC5NC(=O)C[C@@H]([C@H]2O[C@@H]1OC(C)(C)O[C@@H]1[C@H]2OCc3ccccc3)NC(=O)C(CC(C)C)NC(=O)C(Cc4ccccc4)NC5=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 5, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 5, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 5&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC5NC(=O)C(Cc1ccccc1)NC(=O)C[C@@H]([C@H]3O[C@@H]2OC(C)(C)O[C@@H]2[C@H]3OCc4ccccc4)NC(=O)C(C)NC5=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 6, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 6, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 6&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC6NC(=O)C(Cc1ccccc1)NC(=O)C(Cc2ccccc2)NC(=O)C[C@@H](C4O[C@@H]3OC(C)(C)O[C@@H]3[C@H]4OCc5ccccc5)NC6=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 7, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 7, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 7&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC5NC(=O)C(Cc1ccccc1)NC(=O)C(CC(C)C)NC(=O)C[C@H]([C@H]3O[C@@H]2OC(C)(C)O[C@@H]2[C@H]3OCc4ccccc4)NC5=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 8, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 8, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 8&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CSCCC6NC(=O)C(Cc1ccccc1)NC(=O)C(Cc2ccccc2)NC(=O)C[C@H]([C@H]4O[C@@H]3OC(C)(C)O[C@@H]3[C@H]4OCc5ccccc5)NC6=O&quot;, &quot;data-sequence&quot;: &quot;-&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/jo2019834&quot;, &quot;data-id&quot;: 9, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 9, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 9&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: -&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/jo2019834&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CCC(=O)CCCCC[C@@H]4NC(=O)[C@@H](C)n1cc(nn1)[C@H]([C@@H](C)CC)NC(=O)[C@H](Cc2c[nH]c3ccccc23)NC4=O&quot;, &quot;data-sequence&quot;: &quot;c-(Trp_eps-Ile_eps-D-Ala_Aoda)&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/anie.200805900 &quot;, &quot;data-id&quot;: 10, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 10, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 10&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c-(Trp_eps-Ile_eps-D-Ala_Aoda)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/anie.200805900 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CCC(=O)CCCCC[C@@H]4NC(=O)[C@@H](C)n1nncc1[C@H](CC(C)C)NC(=O)[C@H](Cc2c[nH]c3ccccc23)NC4=O&quot;, &quot;data-sequence&quot;: &quot;c-(Trp_eps-Leu_eps-D-Ala_Aoda)&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/anie.200805900 &quot;, &quot;data-id&quot;: 11, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 11, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 11&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c-(Trp_eps-Leu_eps-D-Ala_Aoda)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/anie.200805900 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CCC(=O)CCCCC[C@@H]4NC(=O)[C@@H](C)n1nncc1[C@@H](CC(C)C)NC(=O)[C@H](Cc2c[nH]c3ccccc23)NC4=O&quot;, &quot;data-sequence&quot;: &quot;c-(Trp_eps-D-Leu_eps-D-Ala_Aoda)&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/anie.200805900 &quot;, &quot;data-id&quot;: 12, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 12, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 12&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c-(Trp_eps-D-Leu_eps-D-Ala_Aoda)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/anie.200805900 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY &quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;COCC[C@@H]2NC(=O)[C@H](C)NC(=O)[C@H](CC(N)=O)NC(=O)CNC(=O)[C@H](CCC(N)=O)NC(=O)[C@H](CO)NC(=O)[C@H](C)NC(=O)CNC(=O)[C@H]1CCCN1C(=O)[C@H](C(C)C)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(GQSAGD-PVhS(Me)AN) &quot;, &quot;data-paper-link&quot;: &quot;http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&quot;, &quot;data-id&quot;: 13, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 13, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 13&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(GQSAGD-PVhS(Me)AN) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY &quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY &quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC[C@@H]2NC(=O)[C@H](C)NC(=O)CNC(=O)[C@H]1CCCN1C(=O)[C@H](C(C)C)NC(=O)[C@H](CCOC)NC(=O)[C@H](C)NC(=O)[C@H](CC(N)=O)NC(=O)CNC(=O)[C@H](CCC(N)=O)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(GQXAGD-PVhS(Me)AN)&quot;, &quot;data-paper-link&quot;: &quot;http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&quot;, &quot;data-id&quot;: 14, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 14, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 14&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(GQXAGD-PVhS(Me)AN)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY &quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY &quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;COC[C@@H]2NC(=O)[C@H](CCC(N)=O)NC(=O)CNC(=O)[C@H](CC(N)=O)NC(=O)[C@H](C(C)C)NC(=O)[C@H](CCl)NC(=O)[C@H](C)NC(=O)CNC(=O)[C@H]1CCCN1C(=O)[C@H](C(C)C)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(NVA(Cl)AGD-PVS(Me) QG) &quot;, &quot;data-paper-link&quot;: &quot;http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&quot;, &quot;data-id&quot;: 15, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 15, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 15&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(NVA(Cl)AGD-PVS(Me) QG) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://pubs.acs.org/doi/abs/10.1021/acs.biochem.7b00429&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY &quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC(C)C[C@@H]2NC(=O)[C@H](Cc1ccc(O)cc1)N(C)C(=O)[C@@H](CC(C)C)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](CC(C)C)N(C)C2=O&quot;, &quot;data-sequence&quot;: &quot;Cyclo-[Tyr(N-Me)-D-Leu(N-Me)-Leu-Leu(N-Me)-D-Leu(N-Me)-Leu]&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/cbic.201500441 &quot;, &quot;data-id&quot;: 16, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;CDCl3, DMSO&quot;, &quot;mols2grid-id&quot;: 16, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 16&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Cyclo-[Tyr(N-Me)-D-Leu(N-Me)-Leu-Leu(N-Me)-D-Leu(N-Me)-Leu]&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: CDCl3, DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/cbic.201500441 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC(C)C[C@@H]3NC(=O)[C@H](Cc1ccc(O)cc1)N(C)C(=O)[C@H]2CCCN2C(=O)[C@H](CC(C)C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](CC(C)C)N(C)C3=O&quot;, &quot;data-sequence&quot;: &quot;Cyclo-[Tyr(N-Me)-D-Pro-Leu-Leu(N-Me)-D-Leu(N-Me)-Leu] &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/cbic.201500441 &quot;, &quot;data-id&quot;: 17, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;CDCl3, DMSO&quot;, &quot;mols2grid-id&quot;: 17, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 17&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Cyclo-[Tyr(N-Me)-D-Pro-Leu-Leu(N-Me)-D-Leu(N-Me)-Leu] &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: CDCl3, DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/cbic.201500441 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC(C)C[C@@H]4NC(=O)[C@H](Cc1ccc(O)cc1)N(C)C(=O)[C@H]2CCCN2C(=O)[C@H](CC(C)C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@H]3CCCN3C4=O&quot;, &quot;data-sequence&quot;: &quot;Cyclo-[Tyr(N-Me)-D-Pro-Leu-Leu(N-Me)-D-Pro-Leu]&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/cbic.201500441 &quot;, &quot;data-id&quot;: 18, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;CDCl3, DMSO&quot;, &quot;mols2grid-id&quot;: 18, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 18&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: Cyclo-[Tyr(N-Me)-D-Pro-Leu-Leu(N-Me)-D-Pro-Leu]&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: CDCl3, DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/cbic.201500441 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC[C@H]4c1nnc(o1)[C@H](Cc2ccccc2)NC(=O)CNC(=O)[C@H](CC(C)C)NC(=O)CNC(=O)[C@@H]3CCCN34 , CC[C@@H]4c1nnc(o1)[C@H](Cc2ccccc2)NC(=O)CNC(=O)[C@H](CC(C)C)NC(=O)CNC(=O)[C@@H]3CCCN34&quot;, &quot;data-sequence&quot;: &quot;cyclo[PGLGF]odz/ethyl &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1038/nchem.2636&quot;, &quot;data-id&quot;: 19, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 19, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 19&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo[PGLGF]odz/ethyl &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1038/nchem.2636&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;CC(C)C[C@@H]4NC(=O)[C@H](CO)NC(=O)[C@@H]1CCCN1C(Cc2ccccc2)c5nnc(CNC(=O)[C@H](Cc3ccc(O)cc3)NC4=O)o5&quot;, &quot;data-sequence&quot;: &quot;cyclo[PSLYG]odz/benzyl &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1038/nchem.2636&quot;, &quot;data-id&quot;: 20, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 20, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 20&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo[PSLYG]odz/benzyl &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1038/nchem.2636&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](C(C)C)(C(N[C@@](C)(C1)[H])=O)NC([C@]([H])([C@](CC)(C)[H])NC([C@]([H])(CC(C)C)NC([C@]([H])(Cc2ccccc2)NC1=O)=O)=O)=O&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-Val-b-Hala-Phe-Leu-Ile-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 21, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;TFE&quot;, &quot;mols2grid-id&quot;: 21, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 21&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-Val-b-Hala-Phe-Leu-Ile-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: TFE&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CO)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@@]([H])(CC(=O)O)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-Ser-Pro-Leu-Asn-Asp-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 22, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 22, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 22&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-Ser-Pro-Leu-Asn-Asp-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CO)(C(N1[C@@](CCC1)(C(N[C@@](CC(C)C)(C(N[C@@](CC(N)=O)(C2)[H])=O)[H])=O)[H])=O)NC([C@]([H])(CC(O)=O)NC2=O)=O&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-Ser-Pro-Leu-b-Hasn-Asp-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 23, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 23, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 23&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-Ser-Pro-Leu-b-Hasn-Asp-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CO)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@@]([H])(C(C)C)C(=O)N[C@@]([H])(CC(=O)O)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-Ser-Pro-Leu-Asn-Val-Asp-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 24, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 24, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 24&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-Ser-Pro-Leu-Asn-Val-Asp-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CO)(C(N1[C@]2(CCC1)[H])=O)NC([C@]([H])(CC(O)=O)NC([C@]([H])([C@](CC)(C)[H])NC([C@]([H])(CC(N)=O)NC([C@]([H])(CC(C)C)NC(C2)=O)=O)=O)=O)=O&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-Ser-b-Hpro-Leu-Asn-Ile-Asp-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 25, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 25, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 25&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-Ser-b-Hpro-Leu-Asn-Ile-Asp-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CO)(CC(N1[C@@](CCC1)(C(N[C@@](CC(C)C)(C(N[C@]2(CC(N)=O)[H])=O)[H])=O)[H])=O)NC([C@]([H])(CC(O)=O)NC([C@]([H])([C@](CC)(C)[H])NC(C2)=O)=O)=O&quot;, &quot;data-sequence&quot;: &quot;cyclo-(-b-Hser-Pro-Leu-b-Hasn-Ile-Asp-) &quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1002/bip.20859 &quot;, &quot;data-id&quot;: 26, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 26, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 26&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(-b-Hser-Pro-Leu-b-Hasn-Ile-Asp-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1002/bip.20859 &lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(C(C)C)C(=O)N[C@]([H])(Cc1ccccc1)C(=O)N[C@]([H])(CC(=O)O)C(=O)NCC(=O)N[C@]([H])(CCCNC(=N)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-VfdGr-) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 27, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 27, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 27&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-VfdGr-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(C(C)C)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N[C@]([H])(CC(=O)O)C(=O)NCC(=O)N[C@]([H])(CCCNC(=N)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-vFdGr-) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 28, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 28, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 28&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-vFdGr-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(C(C)C)C(=O)N[C@]([H])(Cc1ccccc1)C(=O)N[C@@]([H])(CC(=O)O)C(=O)NCC(=O)N[C@]([H])(CCCNC(=N)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-vfDGr-) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 29, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 29, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 29&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-vfDGr-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(C(C)C)C(=O)N[C@]([H])(Cc1ccccc1)C(=O)N[C@]([H])(CC(=O)O)C(=O)NCC(=O)N[C@@]([H])(CCCNC(=N)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-vfdGR-) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 30, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 30, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 30&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-vfdGR-) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(C(C)C)C(=O)N[C@]([H])(Cc1ccccc1)C(=O)N[C@]([H])(CC(=O)O)C(=O)NCC(=O)N[C@]([H])(CCCNC(=N)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-vfdGr-)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 31, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 31, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 31&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-vfdGr-)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@]([H])(CC(=O)O)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N[C@@]([H])(C(C)C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-RGdFV-)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 32, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 32, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 32&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-RGdFV-)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N[C@@]([H])(C(C)C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo(-RGDFV-)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja961908l&quot;, &quot;data-id&quot;: 33, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 33, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 33&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo(-RGDFV-)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja961908l&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@@](CCCNC(N)=N)(C(NCC(N[C@](CC(O)=O)(C(N[C@@](Cc1ccccc1)(C[NH2+][C@](C(C)C)2[H])[H])=O)[H])=O)=O)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(-Arg1-Gly2-Asp3-D-PheV[CH2-NH]Val5-) (1) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja00096a034&quot;, &quot;data-id&quot;: 34, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO H2O mixture&quot;, &quot;mols2grid-id&quot;: 34, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 34&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(-Arg1-Gly2-Asp3-D-PheV[CH2-NH]Val5-) (1) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO H2O mixture&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja00096a034&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N1[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@]([H])(CCCCN)C(=O)N[C@@]([H])(C(C)C)C1(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDkV) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 35, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 35, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 35&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDkV) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(C(C)C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDpV)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 36, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 36, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 36&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDpV)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N1[C@](CC2=CC=CC=C2C1)(C(N[C@@](C(C)C)3[H])=O)[H])=O)[H])=O)=O)NC3=O&quot;, &quot;data-sequence&quot;: &quot; c(RGDticV): 1,2,3,4-tetrahydroisochinoline carbonic acid (Tic)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 37, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 37, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 37&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;:  c(RGDticV): 1,2,3,4-tetrahydroisochinoline carbonic acid (Tic)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N3[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@]([H])(CC(=CN2)C1=C2C=CC=C1)C(=O)N[C@@]([H])(C(C)C)C3(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDwV)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 38, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 38, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 38&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDwV)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@]([H])(Cc1ccccc1)C(=O)N[C@@]([H])(CCCCN)C2(=O)&quot;, &quot;data-sequence&quot;: &quot; c(RGDfK)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 39, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 39, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 39&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;:  c(RGDfK)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N1[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@]([H])(C(C)C)C1(=O)&quot;, &quot;data-sequence&quot;: &quot; c(RGDKv)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 40, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 40, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 40&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;:  c(RGDKv)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N3[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CC(=CN2)C1=C2C=CC=C1)C(=O)N[C@]([H])(C(C)C)C3(=O)&quot;, &quot;data-sequence&quot;: &quot; c(RGDWv)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 41, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 41, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 41&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;:  c(RGDWv)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N[C@]([H])(CCCCN)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDFk)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9603721&quot;, &quot;data-id&quot;: 42, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 42, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 42&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDFk)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9603721&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N[C@@H]1C(N([C@H]2CC(C)C)CC1)=O)=O)[H])=O)=O)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(RGD\&quot;S-ANC\&quot;) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 43, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 43, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 43&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGD\&quot;S-ANC\&quot;) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N[C@H]1C(N([C@H]2CC(C)C)CC1)=O)=O)[H])=O)=O)NC2=O&quot;, &quot;data-sequence&quot;: &quot;c(RGD\&quot;R-ANC\&quot;) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 44, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 44, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 44&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGD\&quot;R-ANC\&quot;) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N[C@@H]1C(N2[C@H]3CS[C@]2(CC1)[H])=O)=O)[H])=O)=O)NC3=O&quot;, &quot;data-sequence&quot;: &quot;c(RGD\&quot;BTD\&quot;) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 45, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 45, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 45&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGD\&quot;BTD\&quot;) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N1[C@]2(CCC1)C(N(CC2)[C@H]3CC(C)C)=O)=O)[H])=O)=O)NC3=O&quot;, &quot;data-sequence&quot;: &quot;c(RGD\&quot;Spiro\&quot;) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 46, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 46, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 46&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGD\&quot;Spiro\&quot;) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(NCC(N[C@@](CC(O)=O)(C(N[C@@H]1C(N2[C@H]3CS[C@]2(CC1)[H])=O)=O)[H])=O)=O)NC([C@]([H])(C(C)C)NC3=O)=O&quot;, &quot;data-sequence&quot;: &quot;c(RGD\&quot;BTD\&quot;V)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 47, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 47, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 47&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGD\&quot;BTD\&quot;V)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;[H][C@](CCCNC(N)=N)(C(N[C@](C)(C(N[C@@](CC(O)=O)(C(N[C@@H]1C(N2[C@H]3CS[C@]2(CC1)[H])=O)=O)[H])=O)[H])=O)NC([C@]([H])(C(C)C)NC3=O)=O&quot;, &quot;data-sequence&quot;: &quot;c(RaD\&quot;BTD\&quot;V) &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja9608757&quot;, &quot;data-id&quot;: 48, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 48, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 48&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RaD\&quot;BTD\&quot;V) &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja9608757&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N1[C@@]([H])(CCC1)C(=O)NCC2(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDFPG) trans / c(RGDFPG) cis&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1002/prot.340150303&quot;, &quot;data-id&quot;: 49, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 49, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 49&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDFPG) trans / c(RGDFPG) cis&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1002/prot.340150303&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCCNC(=N)N)C(=O)NCC(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;c(RGDFPA) trans / c(RGDFPA)cis&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1002/prot.340150303&quot;, &quot;data-id&quot;: 50, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 50, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 50&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(RGDFPA) trans / c(RGDFPA)cis&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1002/prot.340150303&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N21[C@]([H])(CCC1)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo[-D-Pro-Ala2-Ala3-Ala4-Ala5-]&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1021/ja00082a027&quot;, &quot;data-id&quot;: 51, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;DMSO&quot;, &quot;mols2grid-id&quot;: 51, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 51&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo[-D-Pro-Ala2-Ala3-Ala4-Ala5-]&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: DMSO&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1021/ja00082a027&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N21[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CO)C(=O)N[C@]([H])(CC(C)C)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(C(C)C)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo-(Pro-Ser-leu-Asp-Val)&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/acs.jcim.8b00097&quot;, &quot;data-id&quot;: 52, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 52, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 52&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(Pro-Ser-leu-Asp-Val)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/acs.jcim.8b00097&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;O=C1N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@@H](C(=O)N(C)[C@H]1C(C)C)Cc2ccccc2)CC(=O)O)CCC/N=C(\\N)N&quot;, &quot;data-sequence&quot;: &quot;cilengitide cyclo-(Arg-Gly-Asp-phe-([N-Me]Val))&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/acs.jcim.8b00097&quot;, &quot;data-id&quot;: 53, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution, DMSO, MeOH, CDCl3&quot;, &quot;mols2grid-id&quot;: 53, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 53&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cilengitide cyclo-(Arg-Gly-Asp-phe-([N-Me]Val))&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution, DMSO, MeOH, CDCl3&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/acs.jcim.8b00097&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N3[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CC(=CN2)C1=C2C=CC=C1)C(=O)N[C@@]([H])(CC(=CN2)C1=C2C=CC=C1)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(Cc1ccccc1)C3(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo-(Arg-Arg-Trp-Trp-Arg-Phe)&quot;, &quot;data-paper-link&quot;: &quot;http://dx.doi.org/10.1021/acs.jcim.8b00097&quot;, &quot;data-id&quot;: 54, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 54, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 54&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo-(Arg-Arg-Trp-Trp-Arg-Phe)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: http://dx.doi.org/10.1021/acs.jcim.8b00097&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N3[C@@]([H])(CO)C(=O)N[C@@]([H])(Cc1ccc(O)cc1)C(=O)N[C@@]([H])(CO)C(=O)N[C@@]([H])(CCSC)C(=O)N[C@@]([H])(CCC(=O)O)C(=O)N[C@@]([H])(CC1=CN=C-N1)C(=O)N[C@@]([H])(Cc1ccccc1)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CC(=CN2)C1=C2C=CC=C1)C(=O)NCC3(=O)&quot;, &quot;data-sequence&quot;: &quot;cyclo [Ser-Tyr-Ser-Met-Glu-His-Phe-Arg-Trp-Gly] &quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1007/bf00355044&quot;, &quot;data-id&quot;: 55, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 55, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 55&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: cyclo [Ser-Tyr-Ser-Met-Glu-His-Phe-Arg-Trp-Gly] &lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1007/bf00355044&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 1, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 0, &quot;data-SMILES&quot;: &quot;N[C@@]([H])(CS1)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CCSC)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CO)C(=O)N[C@@]([H])([C@]([H])(CC)C)C(=O)N[C@@]([H])(CS1)C(=O)O&quot;, &quot;data-sequence&quot;: &quot;c(C-L-L-R-M-R-S-I-C) disulfide-linked&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1034/j.1399-3011.2003.00070.x&quot;, &quot;data-id&quot;: 56, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 56, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 56&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: c(C-L-L-R-M-R-S-I-C) disulfide-linked&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1034/j.1399-3011.2003.00070.x&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])([C@]([H])(O)C)C(=O)N[C@]([H])(CCCCN)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])([C@]([H])(O)C)C(=O)N[C@]([H])(CC(=O)N)C(=O)N1[C@]([H])(CCC1)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;T(DLY)NDT(DSG)(DPR)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 57, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 57, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 57&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: T(DLY)NDT(DSG)(DPR)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(CC1=CN=C-N1)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@]([H])(CC(=O)O)C(=O)N[C@]([H])(CCC(=O)N)C(=O)N[C@]([H])(CO)C(=O)N[C@]([H])(CCC(=O)O)C(=O)N1[C@@]([H])(CCC1)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;(DHI)P(DAS)(DGN)(DSN)(DGL)P&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 58, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 58, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 58&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: (DHI)P(DAS)(DGN)(DSN)(DGL)P&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])([C@]([H])(O)C)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CCC(=O)N)C(=O)N[C@]([H])(CCC(=O)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;DDPT(DPR)(DAR)Q(DGN)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 59, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 59, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 59&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: DDPT(DPR)(DAR)Q(DGN)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(CCCNC(=N)N)C(=O)N[C@@]([H])(CCC(=O)N)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@]([H])(CCC(=O)N)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@]([H])(CCC(=O)O)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CCC(=O)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;(DAR)Q(DPR)(DGN)R(DGL)PQ&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 60, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 60, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 60&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: (DAR)Q(DPR)(DGN)R(DGL)PQ&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N21[C@]([H])(CCC1)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(Cc1ccc(O)cc1)C(=O)N[C@]([H])(CC1=CN=C-N1)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CC(C)C)C(=O)N[C@]([H])(CCC(=O)N)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;(DPR)PY(DHI)PKDL(DGN)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 61, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 61, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 61&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: (DPR)PY(DHI)PKDL(DGN)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCC(=O)O)C(=O)N[C@]([H])(C(C)C)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@]([H])(CCC(=O)O)C(=O)N[C@]([H])(CC1=CN=C-N1)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@]([H])(C)C(=O)N1[C@]([H])(CCC1)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;E(DVA)DP(DGL)(DHI)(DPR)N(DAL)(DPR)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 62, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 62, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 62&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: E(DVA)DP(DGL)(DHI)(DPR)N(DAL)(DPR)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;[H][C@](CCC(N)=O)(C(N[C@@](CC(O)=O)(C(N1[C@@](CCC1)(C(N2[C@](CCC2)(C(N[C@@](CCCCN)(C(N[C@]([C@](O)(C)[H])(C(N[C@](CC(O)=O)3[H])=O)[H])=O)[H])=O)[H])=O)[H])=O)[H])=O)NC3=O&quot;, &quot;data-sequence&quot;: &quot;QDP(DPR)K(2TL)(DAS)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 63, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 63, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 63&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: QDP(DPR)K(2TL)(DAS)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(C)C(=O)N[C@@]([H])(C)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@]([H])(C(C)C)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CCCNC(=N)N)C(=O)N[C@]([H])(CC(C)C)C(=O)N[C@]([H])([C@@]([H])(O)C)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@@]([H])(CCC(=O)O)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;AAR(DVA)(DPR)R(DLE)(DTH)PE&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 64, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 64, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 64&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: AAR(DVA)(DPR)R(DLE)(DTH)PE&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CC1=CN=C-N1)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@]([H])(C(C)C)C(=O)N[C@@]([H])(CS)C(=O)N[C@@]([H])([C@]([H])(CC)C)C(=O)N1[C@@]([H])(CCC1)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CCC(=O)O)C(=O)N[C@]([H])(CCCCN)C(=O)N[C@@]([H])(C(C)C)C(=O)N[C@@]([H])(CS)C(=O)N[C@]([H])(CCC(=O)O)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;H(DPR)(DVA)CIP(DPR)E(DLY)VC(DGL)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 65, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 65, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 65&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: H(DPR)(DVA)CIP(DPR)E(DLY)VC(DGL)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@@]([H])(CCC(=O)N)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N1[C@@]([H])(CCC1)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@]([H])([C@@]([H])(O)C)C(=O)N[C@]([H])(CC(=O)O)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;QDP(DPR)K(DTH)(DAS)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 66, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 66, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 66&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: QDP(DPR)K(DTH)(DAS)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(CS)C(=O)N[C@@]([H])(CC(=O)N)C(=O)N[C@]([H])(C(C)C)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(C(C)C)C(=O)N[C@@]([H])(Cc1ccc(O)cc1)C(=O)N[C@@]([H])(CS)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@]([H])(CC(=O)N)C(=O)N[C@@]([H])(CCCCN)C(=O)N[C@@]([H])(Cc1ccc(O)cc1)C(=O)N[C@]([H])(C(C)C)C(=O)N1[C@]([H])(CCC1)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;(DCY)N(DVA)(DPR)DVYC(DPR)(DSG)KY(DVA)(DPR)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 67, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 67, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 67&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: (DCY)N(DVA)(DPR)DVYC(DPR)(DSG)KY(DVA)(DPR)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}, {&quot;data-is-natural-cyclic-peptide&quot;: 0, &quot;data-type-of-NOE-experiment&quot;: &quot;NOESY, ROESY&quot;, &quot;data-is-unnatural-cyclic-peptide&quot;: 1, &quot;data-SMILES&quot;: &quot;N2[C@]([H])(C)C(=O)N[C@@]([H])(CCC(=O)N)C(=O)N1[C@]([H])(CCC1)C(=O)N[C@]([H])(CS)C(=O)N[C@]([H])(CCCCN)C(=O)N[C@@]([H])(CC(=O)O)C(=O)N[C@@]([H])(CO)C(=O)N[C@]([H])(Cc1ccc(O)cc1)C(=O)N[C@]([H])(CS)C(=O)N1[C@@]([H])(CCC1)C(=O)N[C@]([H])(CO)C2(=O)&quot;, &quot;data-sequence&quot;: &quot;(DAL)Q(DPR)(DCY)(DLY)DS(DTY)(DCY)P(DSN)&quot;, &quot;data-paper-link&quot;: &quot;https://doi.org/10.1126/science.aap7577&quot;, &quot;data-id&quot;: 68, &quot;data-img&quot;: null, &quot;data-solvent&quot;: &quot;aqueous solution&quot;, &quot;mols2grid-id&quot;: 68, &quot;mols2grid-tooltip&quot;: &quot;&lt;strong&gt;id&lt;/strong&gt;: 68&lt;br&gt;&lt;strong&gt;sequence&lt;/strong&gt;: (DAL)Q(DPR)(DCY)(DLY)DS(DTY)(DCY)P(DSN)&lt;br&gt;&lt;strong&gt;is natural cyclic peptide&lt;/strong&gt;: 0&lt;br&gt;&lt;strong&gt;is unnatural cyclic peptide&lt;/strong&gt;: 1&lt;br&gt;&lt;strong&gt;solvent&lt;/strong&gt;: aqueous solution&lt;br&gt;&lt;strong&gt;paper-link&lt;/strong&gt;: https://doi.org/10.1126/science.aap7577&lt;br&gt;&lt;strong&gt;type of NOE experiment&lt;/strong&gt;: NOESY, ROESY&quot;}]);
+// filter
+if (window.parent.mols2grid_lists === undefined) {
+    window.parent.mols2grid_lists = {};
+}
+window.parent.mols2grid_lists[&quot;default&quot;] = listObj;
+
+
+// selection
+class MolStorage extends Map {
+    multi_set(_id, _smiles) {
+        for (let i=0; i &lt; _id.length; i++) {
+            this.set(_id[i], _smiles[i]);
+        }
+    }
+    multi_del(_id) {
+        for (let i=0; i &lt; _id.length; i++) {
+            this.delete(_id[i]);
+        };
+    }
+    to_dict() {
+        var content = &quot;{&quot;;
+        for (let [key, value] of this) {
+            content += key + &quot;:&quot; + JSON.stringify(value) + &quot;,&quot;;
+        }
+        content = content.length &gt; 1 ? content.slice(0, -1) : content;
+        content += &quot;}&quot;;
+        return content
+    }
+    download_smi(fileName) {
+        var content = &quot;&quot;;
+        for (let [key, value] of this) {
+            content += value + &quot; &quot; + key + &quot;\n&quot;;
+        }
+        var a = document.createElement(&quot;a&quot;);
+        var file = new Blob([content], {type: &quot;text/plain&quot;});
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+        a.remove();
+    }
+}
+var SELECTION = new MolStorage();
+
+
+
+// kernel
+function add_selection(grid_id, _id, smiles) {
+    SELECTION.multi_set(_id, smiles);
+    let model = window.parent[&quot;_MOLS2GRID_&quot; + grid_id];
+    if (model) {
+        model.set(&quot;selection&quot;, SELECTION.to_dict());
+        model.save_changes();
+    }
+}
+function del_selection(grid_id, _id) {
+    SELECTION.multi_del(_id);
+    let model = window.parent[&quot;_MOLS2GRID_&quot; + grid_id];
+    if (model) {
+        model.set(&quot;selection&quot;, SELECTION.to_dict());
+        model.save_changes();
+    }
+}
+if (window.parent.IPython !== undefined) {
+    // Jupyter notebook
+    var kernel_env = &quot;jupyter&quot;;
+} else if (window.parent.google !== undefined) {
+    // Google colab
+    var kernel_env = &quot;colab&quot;;
+} else {
+    var kernel_env = null;
+}
+
+
+
+
+// sort
+var sort_field = &quot;mols2grid-id&quot;;
+var sort_order = &quot;asc&quot;;
+function mols2gridSortFunction(itemA, itemB, options) {
+    var x = itemA.values()[options.valueName];
+    var y = itemB.values()[options.valueName];
+    if (typeof x === &quot;number&quot;) {
+        if (isFinite(x - y)) {
+            return x - y; 
+        } else {
+            return isFinite(x) ? -1 : 1;
+        }
+    } else {
+        x = x.toLowerCase();
+        y = y.toLowerCase();
+        return (x &lt; y) ? -1: (x &gt; y) ? 1: 0;
+    }
+}
+function checkboxSort(itemA, itemB, options) {
+    if (itemA.elm !== undefined) {
+        var checkedA = itemA.elm.firstChild.checked;
+        if (itemB.elm !== undefined) {
+            var checkedB = itemB.elm.firstChild.checked;
+            if (checkedA &amp;&amp; !checkedB) {
+                return -1;
+            } else if (!checkedA &amp;&amp; checkedB) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return -1;
+        }
+    } else if (itemB.elm !== undefined) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+$(&#x27;#mols2grid button.sort-btn&#x27;).click(function(e) {
+    var _field = $(this).attr(&quot;data-name&quot;);
+    if (_field == sort_field) {
+        $(this).removeClass(&quot;arrow-&quot; + sort_order)
+        sort_order = (sort_order === &quot;desc&quot;) ? &quot;asc&quot; : &quot;desc&quot;;
+    } else {
+        $(&#x27;#mols2grid button.sort-btn.active&#x27;).removeClass(&quot;active arrow-&quot; + sort_order);
+        sort_order = &quot;asc&quot;;
+        sort_field = _field;
+        $(this).addClass(&quot;active&quot;);
+    }
+    $(this).addClass(&quot;arrow-&quot; + sort_order)
+    if (sort_field == &quot;checkbox&quot;) {
+        listObj.sort(&quot;mols2grid-id&quot;, {order: sort_order, sortFunction: checkboxSort});
+    } else {
+        listObj.sort(_field, {order: sort_order, sortFunction: mols2gridSortFunction});
+    }
+});
+
+
+
+
+// tooltips
+$.fn.tooltip.Constructor.Default.whiteList.span = [&#x27;style&#x27;]
+listObj.on(&quot;updated&quot;, function (list) {
+    $(function () {
+        // hide previous popovers
+        $(&#x27;#mols2grid a.page-link&#x27;).click(function(e) {
+            $(&#x27;.mols2grid-tooltip[data-toggle=&quot;popover&quot;]&#x27;).popover(&#x27;hide&#x27;)
+        });
+        // create new popover
+        $(&#x27;.mols2grid-tooltip[data-toggle=&quot;popover&quot;]&#x27;).popover({
+            placement: &#x27;bottom&#x27;,
+            trigger: &#x27;click hover&#x27;,
+            html: true,
+            sanitize: false,
+        });
+    })
+});
+
+
+
+// selection modifyers and export options
+// check all
+$(&#x27;#btn-chkbox-all&#x27;).click(function (e) {
+    var _id = [];
+    var _smiles = [];
+    listObj.items.forEach(function (item) {
+        if (item.elm) {
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = true;
+        } else {
+            item.show()
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = true;
+            item.hide()
+        }
+        _id.push(item.values()[&quot;mols2grid-id&quot;]);
+        _smiles.push(item.values()[&quot;data-SMILES&quot;]);
+    });
+    add_selection(&quot;default&quot;, _id, _smiles);
+});
+// check matching
+$(&#x27;#btn-chkbox-match&#x27;).click(function (e) {
+    var _id = [];
+    var _smiles = [];
+    listObj.matchingItems.forEach(function (item) {
+        if (item.elm) {
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = true;
+        } else {
+            item.show()
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = true;
+            item.hide()
+        }
+        _id.push(item.values()[&quot;mols2grid-id&quot;]);
+        _smiles.push(item.values()[&quot;data-SMILES&quot;]);
+    });
+    add_selection(&quot;default&quot;, _id, _smiles);
+});
+// uncheck all
+$(&#x27;#btn-chkbox-none&#x27;).click(function (e) {
+    var _id = [];
+    listObj.items.forEach(function (item) {
+        if (item.elm) {
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = false;
+        } else {
+            item.show()
+            item.elm.getElementsByTagName(&quot;input&quot;)[0].checked = false;
+            item.hide()
+        }
+        _id.push(item.values()[&quot;mols2grid-id&quot;]);
+    });
+    del_selection(&quot;default&quot;, _id);
+});
+// invert
+$(&#x27;#btn-chkbox-invert&#x27;).click(function (e) {
+    var _id_add = [];
+    var _id_del = [];
+    var _smiles = [];
+    listObj.items.forEach(function (item) {
+        if (item.elm) {
+            var chkbox = item.elm.getElementsByTagName(&quot;input&quot;)[0]
+            chkbox.checked = !chkbox.checked;
+        } else {
+            item.show()
+            var chkbox = item.elm.getElementsByTagName(&quot;input&quot;)[0]
+            chkbox.checked = !chkbox.checked;
+            item.hide()
+        }
+        if (chkbox.checked) {
+            _id_add.push(item.values()[&quot;mols2grid-id&quot;]);
+            _smiles.push(item.values()[&quot;data-SMILES&quot;]);
+        } else {
+            _id_del.push(item.values()[&quot;mols2grid-id&quot;]);
+        }
+    });
+    del_selection(&quot;default&quot;, _id_del);
+    add_selection(&quot;default&quot;, _id_add, _smiles);
+});
+// copy to clipboard
+$(&quot;#btn-chkbox-copy&quot;).click(function(e) {
+    navigator.clipboard.writeText(SELECTION.to_dict());
+});
+// export smiles
+$(&quot;#btn-chkbox-dlsmi&quot;).click(function(e) {
+    SELECTION.download_smi(&quot;selection.smi&quot;);
+});
+// export CSV
+$(&quot;#btn-chkbox-dlcsv&quot;).click(function(e) {
+    var sep = &quot;\t&quot;
+    // same order as subset + tooltip
+    var columns = Array.from(listObj.items[0].elm.querySelectorAll(&quot;div.data&quot;))
+                       .map(elm =&gt; elm.classList[1]);
+    // remove &#x27;data-&#x27;
+    var header = columns.map(name =&gt; name.slice(5));
+    // csv content
+    header = [&quot;index&quot;].concat(header).join(sep);
+    var content = header + &quot;\n&quot;;
+    for (let [index, smiles] of SELECTION.entries()) {
+        var data = listObj.items[index].values();
+        content += index;
+        columns.forEach((key) =&gt; {
+            content += sep + data[key];
+        })
+        content += &quot;\n&quot;;
+    }
+    var a = document.createElement(&quot;a&quot;);
+    var file = new Blob([content], {type: &quot;text/csv&quot;});
+    a.href = URL.createObjectURL(file);
+    a.download = &quot;selection.csv&quot;;
+    a.click();
+    a.remove();
+});
+// update selection on checkbox click
+listObj.on(&quot;updated&quot;, function (list) {
+    $(&quot;input:checkbox&quot;).change(function() {
+        var _id = parseInt($(this).closest(&quot;.cell&quot;).attr(&quot;data-mols2grid-id&quot;));
+        if (this.checked) {
+            var _smiles = $($(this).siblings(&quot;.data-SMILES&quot;)[0]).text();
+            add_selection(&quot;default&quot;, [_id], [_smiles]);
+        } else {
+            del_selection(&quot;default&quot;, [_id]);
+        }
+    }); 
+});
+
+
+
+
+
+// generate images for the currently displayed molecules
+var draw_opts = {&quot;fixedBondLength&quot;: 60, &quot;width&quot;: 120, &quot;height&quot;: 90};
+var json_draw_opts = JSON.stringify(draw_opts);
+
+var smarts_matches = {};
+
+// Load RDKit
+window
+.initRDKitModule()
+.then(function(RDKit) {
+    console.log(&#x27;RDKit version: &#x27;, RDKit.version());
+    window.RDKit = RDKit;
+    window.RDKitModule = RDKit;
+
+    // search bar
+    function SmartsSearch(query, columns) {
+    var smiles_col = columns[0];
+    smarts_matches = {};
+    var query = $(&#x27;#mols2grid #searchbar&#x27;).val();
+    var qmol = RDKit.get_qmol(query);
+    if (qmol.is_valid()) {
+        listObj.items.forEach(function (item) {
+            var smiles = item.values()[smiles_col]
+            var mol = RDKit.get_mol(smiles, &#x27;{&quot;removeHs&quot;: false }&#x27;);
+            if (mol.is_valid()) {
+                var results = mol.get_substruct_matches(qmol);
+                if (results === &quot;\{\}&quot;) {
+                    item.found = false;
+                } else {
+                    item.found = true;
+
+                    results = JSON.parse(results);
+
+                    var highlights = {&quot;atoms&quot;: [], &quot;bonds&quot;: []};
+                    results.forEach(function (match) {
+                        highlights[&quot;atoms&quot;].push(...match.atoms)
+                        highlights[&quot;bonds&quot;].push(...match.bonds)
+                    });
+
+                    var index = item.values()[&quot;mols2grid-id&quot;];
+                    smarts_matches[index] = highlights;
+
+                }
+            } else {
+                item.found = false;
+            }
+            mol.delete();
+        });
+    }
+    qmol.delete();
+}
+var search_type = &quot;Text&quot;;
+$(&#x27;#mols2grid .search-btn&#x27;).click(function() {
+    search_type = $(this).text();
+    $(&#x27;#mols2grid button.search-btn.active&#x27;).removeClass(&quot;active&quot;);
+    $(this).addClass(&quot;active&quot;);
+});
+$(&#x27;#mols2grid #searchbar&#x27;).on(&quot;keyup&quot;, function(e) {
+    var query = e.target.value;
+    if (search_type === &quot;Text&quot;) {
+        smarts_matches = {};
+        listObj.search(query, [&#x27;data-id&#x27;, &#x27;data-id&#x27;, &#x27;data-sequence&#x27;, &#x27;data-is-natural-cyclic-peptide&#x27;, &#x27;data-is-unnatural-cyclic-peptide&#x27;, &#x27;data-solvent&#x27;, &#x27;data-paper-link&#x27;, &#x27;data-type-of-NOE-experiment&#x27;]);
+    } else {
+        listObj.search(query, [&quot;data-SMILES&quot;], SmartsSearch);
+    }
+});
+
+
+    // generate images for the currently displayed molecules
+RDKit.prefer_coordgen(true);
+function draw_mol(smiles, index, template_mol) {
+    var mol = RDKit.get_mol(smiles, &#x27;{&quot;removeHs&quot;: false }&#x27;);
+    var svg = &quot;&quot;;
+    if (mol.is_valid()) {
+        var highlights = smarts_matches[index];
+        if (highlights) {
+            var details = Object.assign({}, draw_opts, highlights);
+            details = JSON.stringify(details);
+            mol.generate_aligned_coords(template_mol, true);
+        } else {
+            var details = json_draw_opts;
+        }
+        svg = mol.get_svg_with_highlights(details);
+    }
+    mol.delete();
+    if (svg == &quot;&quot;) {
+        return &#x27;&lt;svg width=&quot;120&quot; height=&quot;90&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 120 90&quot;&gt;&lt;/svg&gt;&#x27;;
+    }
+    return svg;
+}
+listObj.on(&quot;updated&quot;, function (list) {
+    var query = $(&#x27;#mols2grid #searchbar&#x27;).val();
+    var template_mol;
+    if (query === &quot;&quot;) {
+        smarts_matches = {};
+        template_mol = null;
+    } else {
+        template_mol = RDKit.get_qmol(query);
+        template_mol.set_new_coords(true);
+    }
+    $(&#x27;#mols2grid .cell&#x27;).each(function() {
+        var $t = $(this);
+        var smiles = $t.children(&quot;.data-SMILES&quot;).first().text();
+        var index = parseInt(this.getAttribute(&quot;data-mols2grid-id&quot;));
+        var svg = draw_mol(smiles, index, template_mol);
+        $t.children(&quot;.data-img&quot;).html(svg);
+    });
+    if (template_mol) {
+        template_mol.delete();
+    }
+});
+
+
+    // trigger update to activate tooltips, draw images, setup callbacks...
+    listObj.update();
+    // resize iframe to fit content
+    if (window.frameElement) {
+        fit_height(window.frameElement);
+    }
+});
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;">
+</iframe></div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/dataset_12_0.png" src="../_images/dataset_12_0.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./links"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MacroConf – Dataset &amp; Workflows to assess cyclic peptide solution structures</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../single.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Analysis notebooks of single MD runs</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Daniel Crusius<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <script data-goatcounter=“https://ddc.goatcounter.com/count”
+  async src=“//gc.zgo.at/count.js”></script>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
