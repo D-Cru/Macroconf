@@ -1,0 +1,7 @@
+parm data/interim/refactor-test/57/H2O/1_make_topology/mc_sol.prmtop
+trajin data/interim/refactor-test/57/H2O/7_equil_3/traj.ncdf lastframe
+strip :WAT
+strip :Na+,Cl-
+trajout data/interim/refactor-test/57/H2O/7_equil_3/equil.pdb pdb
+run
+

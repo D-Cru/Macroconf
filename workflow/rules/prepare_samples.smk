@@ -173,7 +173,7 @@ if bool(config["run_omega"]):
     compounds = list(set(samples.compound.tolist()))
     conf_gen_files.extend(
         expand(
-            "data/interim/{exp_name}/{compound}/{conf_gen}/{conf_type}/mcs.pdb",
+            "data/interim/{exp_name}/{compound}/{conf_gen}/{conf_type}/mcs_aligned.pdb",
             exp_name=config["exp_name"],
             compound=compounds,
             conf_gen="omega",
@@ -185,7 +185,7 @@ if bool(config["run_rdkit"]):
     compounds = list(set(samples.compound.tolist()))
     conf_gen_files.extend(
         expand(
-            "data/interim/{exp_name}/{compound}/{conf_gen}/{conf_type}/mcs.pdb",
+            "data/interim/{exp_name}/{compound}/{conf_gen}/{conf_type}/mcs_aligned.pdb",
             exp_name=config["exp_name"],
             compound=compounds,
             conf_gen="rdkit",

@@ -1,0 +1,76 @@
+
+          :jGf:             .d8888b. 88d8b.d8b. .d8888b. .d8888b. .d8888b.
+        :jGDDDDf:           88'  `88 88'`88'`88 88ooood8 88'  `88 88'  `88
+      ,fDDDGjLDDDf,         88.  .88 88  88  88 88.  ... 88.  .88 88.  .88
+    ,fDDLt:   :iLDDL;       `88888P' dP  dP  dP `88888P' `8888P88 `88888P8
+  ;fDLt:         :tfDG;                                       .88
+,jft:   ,ijfffji,   :iff                                  d8888P
+     .jGDDDDDDDDDGt.      
+    ;GDDGt:''':tDDDG,          Copyright (c) 2004-2022
+   .DDDG:       :GDDG.         OpenEye Scientific Software, Inc.
+   ;DDDj         tDDDi    
+   ,DDDf         fDDD,         Version: 4.2.1.1
+    LDDDt.     .fDDDj          Built:   20221128
+    .tDDDDfjtjfDDDGt           OEChem version: 3.3.1.1
+      :ifGDDDDDGfi.            Platform: Ubuntu-22.04-g++11.11-x64
+          .:::.                
+  ......................       
+  DDDDDDDDDDDDDDDDDDDDDD       
+  DDDDDDDDDDDDDDDDDDDDDD       
+
+  Licensed for the exclusive use of The Laboratory of Phil Biggin.
+  Licensed for use only in University of Oxford.
+  License expires on August 2, 2023.
+
+
+To cite OMEGA please use the following:
+  OMEGA 4.2.1.1: OpenEye Scientific Software, Santa Fe, NM, USA.
+  http://www.eyesopen.com, 2019
+
+  Hawkins, P.C.D.; Skillman, A.G.; Warren, G.L.; Ellingson, B.A.; Stahl, M.T.
+  Conformer Generation with OMEGA: Algorithm and Validation Using High
+  Quality Structures from the Protein Databank and the Cambridge 
+  Structural Database. J. Chem. Inf. Model. 2010, 50, 572-584.
+
+OMEGA macrocycle
+#Interface settings
+
+#Mode oeomega_macrocycle
+-in  data/interim/refactor-test/49/omega.smi
+#-log  
+#-molNames  
+-out  data/interim/refactor-test/49/omega/basic/mcs.oeb.gz
+-prefix  data/interim/refactor-test/49/omega/
+-progress  3
+#-verbose  false
+
+#Execute Options :   
+    -param  libs/omega/basic.param
+    #-mpi_np (Not set, no default)
+    #-mpi_hostfile (Not set, no default)
+
+#Macrocycle Omega Options :   
+    -iteration_cycle_size  500
+    -max_iterations  2000
+    
+    #Macrocycle Builder Options :   
+        -dielectric_constant  80.0
+        #-ref_tolerance  0.001
+    
+    #Omega Slice Ensemble Options :   
+        -eWindow  20.0
+        -maxConfs  400
+        -rms  0.5
+--------------------------------------
+--------------------------------------
+Title: molecule_1
+Slave 3 has shutdown normally
+Slave 1 has shutdown normally
+Elapsed Time (s) = 268.72
+Slave 2 has shutdown normally
+--------------Job Status--------------
+Number of Molecules Processed = 1
+Number of Read Failures = 0
+Number of Molecules Failed = 0
+Elapsed Time (s) = 268.73
+--------------------------------------

@@ -1,13 +1,16 @@
 #Interface settings
 
 #Mode flipper
--in  data/interim/refactor-test/22/smile.smi
+-in  data/interim/refactor-test/22/ref_smiles.smi
+#-log  
 #-molNames  
 -out  data/interim/refactor-test/22/flipped.smi
 -prefix  data/interim/refactor-test/22/
 #-progress  0
+#-verbose  false
 
 #Flipper Options :   
+    #-enhstereo  false
     #-enumBridgehead  false
     #-enumEZ  false
     #-enumNitrogen  false
@@ -16,7 +19,7 @@
     #-maxCenters  12
     #-warts  false
 --------------------------------------
-Title: 
+Title: molecule_1
 Elapsed Time (s) = 0.00
 --------------Job Status--------------
 Number of Molecules Processed = 1

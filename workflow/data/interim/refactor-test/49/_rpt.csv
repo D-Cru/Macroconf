@@ -1,2 +1,2 @@
 Molecule,SMILES,ElapsedTime(s),Status
-,c1ccc(cc1)C[C@H]2C(=O)N3CCC[C@H]3C(=O)NCC(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N2)CC(=O)O)CCCNC(=N)N,0.00
+"molecule_1",c1ccc(cc1)C[C@H]2C(=O)N3CCC[C@H]3C(=O)NCC(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N2)CC(=O)[O-])CCCNC(=[NH2+])N,0.00

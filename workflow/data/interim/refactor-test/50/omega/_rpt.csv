@@ -1,0 +1,2 @@
+Molecule,SMILES,Conformers,LargestRing,Iterations,ElapsedTime(s),Status
+"molecule_1",C[C@H]1C(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@H](C(=O)N2CCC[C@H]2C(=O)N1)Cc3ccccc3)CC(=O)[O-])CCCNC(=[NH2+])N,400,21,1500,215.21

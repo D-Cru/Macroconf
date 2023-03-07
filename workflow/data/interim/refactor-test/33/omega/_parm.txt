@@ -1,0 +1,28 @@
+#Interface settings
+
+#Mode oeomega_macrocycle
+-in  data/interim/refactor-test/33/omega.smi
+#-log  
+#-molNames  
+-out  data/interim/refactor-test/33/omega/basic/mcs.oeb.gz
+-prefix  data/interim/refactor-test/33/omega/
+-progress  3
+#-verbose  false
+
+#Execute Options :   
+    -param  libs/omega/basic.param
+    #-mpi_np (Not set, no default)
+    #-mpi_hostfile (Not set, no default)
+
+#Macrocycle Omega Options :   
+    -iteration_cycle_size  500
+    -max_iterations  2000
+    
+    #Macrocycle Builder Options :   
+        -dielectric_constant  80.0
+        #-ref_tolerance  0.001
+    
+    #Omega Slice Ensemble Options :   
+        -eWindow  20.0
+        -maxConfs  400
+        -rms  0.5

@@ -1,1 +1,1 @@
-CC[C@H](C)[C@H]1C(=O)N2CCC[C@H]2C(=O)N3CCC[C@@H]3C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H]4CSSC[C@@H](C(=O)N1)NC(=O)[C@H](NC(=O)[C@H]5CCCN5C(=O)[C@@H](NC(=O)[C@H](NC4=O)CCC(=O)O)Cc6cnc[nH]6)C(C)C)C(C)C)CCCCN)CCC(=O)O
+CC[C@H](C)[C@H]1C(=O)N2CCC[C@H]2C(=O)N3CCC[C@@H]3C(=O)N[C@H](C(=O)N[C@@H](C(=O)N[C@H](C(=O)N[C@H]4CSSC[C@@H](C(=O)N1)NC(=O)[C@H](NC(=O)[C@H]5CCCN5C(=O)[C@@H](NC(=O)[C@H](NC4=O)CCC(=O)[O-])Cc6c[nH+]c[nH]6)C(C)C)C(C)C)CCCC[NH3+])CCC(=O)[O-] molecule_1

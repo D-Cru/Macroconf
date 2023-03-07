@@ -10,7 +10,7 @@ for mol in ifs.GetOEMols():
     if ofs.open(snakemake.output.out_file):
         oechem.OEWriteMolecule(ofs, mol)
         # Retrieve relative energies of conformers and write to txt file
-        if snakemake.output.conf_energy:
+        if "conf_energy" in dict(snakemake.output): #.conf_energy:
             energy = []
             for confs in mol.GetConfs():
                 if oechem.OEHasSDData(confs, "Relative Energy"):

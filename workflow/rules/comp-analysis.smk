@@ -105,7 +105,7 @@ def comp_details(wildcards):
                     )
                     output[
                         f"cheminfoconfs{idx}"
-                    ] = f"data/interim/{wildcards.exp_name}/{w.compound}/{j}/{k}/mcs.pdb"
+                    ] = f"data/interim/{wildcards.exp_name}/{w.compound}/{j}/{k}/mcs_aligned.pdb"
 
         path_proc = f"data/processed/{wildcards.exp_name}/results/{w.compound}/{w.solvent}/{w.method}/{w.simtime}/{w.repeats}/{hash}"
         output[f"red_dihe_{i}"] = f"{path_proc}_dihedrals.dat"

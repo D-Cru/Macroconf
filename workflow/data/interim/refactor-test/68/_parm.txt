@@ -1,13 +1,16 @@
 #Interface settings
 
 #Mode flipper
--in  data/interim/refactor-test/68/smile.smi
+-in  data/interim/refactor-test/68/ref_smiles.smi
+#-log  
 #-molNames  
 -out  data/interim/refactor-test/68/flipped.smi
 -prefix  data/interim/refactor-test/68/
 #-progress  0
+#-verbose  false
 
 #Flipper Options :   
+    #-enhstereo  false
     #-enumBridgehead  false
     #-enumEZ  false
     #-enumNitrogen  false
