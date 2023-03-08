@@ -9,3 +9,4 @@ dependencies:
   - notebook
   - scikit-learn
   - seaborn
+  - statannotations
