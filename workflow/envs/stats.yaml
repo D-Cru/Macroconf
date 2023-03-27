@@ -22,6 +22,8 @@ dependencies:
   - scipy=1.7
   - seaborn=0.11
   - svgutils=0.3
+  - selenium
+  - geckodriver
   - pip:
     - giotto-tda==0.5
     - scikit-tda==1.0

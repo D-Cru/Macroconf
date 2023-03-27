@@ -95,47 +95,47 @@ checkpoint md_GaMD_analysis:
         ref_mol=f"data/interim/{config['exp_name']}/{{compound_dir}}/{{solvent}}/1_make_topology/mc_gas.mol2",
     output:
         pca_dihe=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_pca_dihed.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_pca_dihed.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         noe_plot=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         noe_pmf=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe_pmf.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe_pmf.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         cluster_plot=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_plot.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_plot.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         cluster_pca=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_pca.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_pca.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         cluster_min_samp=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_min_samp.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_min_samp.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         cluster_time=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_time.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_time.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         cluster_structs=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_structs.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_cluster_structs.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
         noe_stat_plot=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe_stat_plot.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe_stat_plot.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
@@ -150,9 +150,10 @@ checkpoint md_GaMD_analysis:
         multiple=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_multiple.dat",
         cluster_restart=touch(
             f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_clusters/rst/done.done"
-        ), # change this to directory once fixed in smk.
+        ),
+        # change this to directory once fixed in smk.
         NPR_shape_plot=report(
-            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_NPR_shape.png",
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_NPR_shape.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
@@ -160,6 +161,16 @@ checkpoint md_GaMD_analysis:
         NPR_shape_weights=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_NPR_shape_weights.dat",
         overview_plot=report(
             f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_overview.svg",
+            category="Compound {compound_dir}",
+            subcategory="GaMD",
+        ),
+        rmsd_plot=report(
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_rmsd_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="GaMD",
+        ),
+        omega_plot=report(
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_omega_plot.svg",
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),

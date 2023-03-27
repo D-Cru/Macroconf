@@ -40,7 +40,7 @@ rule conv_check_GaMD_full:
     input:
         param="{dir}/conv_check/{dir2}/11_GaMD_full/{time}/{repeat}/{index}/{cluster_id}_GaMD_conv.in",
         top="{dir}/conv_check/{dir2}/1_make_topology/mc_sol_2.prmtop",
-        coord="{dir}/conv_check/{dir2}/11_GaMD_full/{time}/{repeat}/{index}/rst_{cluster_id}.rst", # 0 hardcoded.. bad...
+        coord="{dir}/conv_check/{dir2}/11_GaMD_full/{time}/{repeat}/{index}/rst_{cluster_id}.rst",  # 0 hardcoded.. bad...
     output:
         out="{dir}/conv_check/{dir2}/11_GaMD_full/{time}/{repeat}/{index}/{cluster_id}_md.out",
         restart="{dir}/conv_check/{dir2}/11_GaMD_full/{time}/{repeat}/{index}/{cluster_id}_md-1.rst",
@@ -152,7 +152,8 @@ rule conv_check_GaMD_anal:
         dPCA_weights_MC_short="data/processed/conv_check/results/{compound_dir}/{solvent}/GaMD/{time}/{repeat}/{index}/{cluster_id}_dPCA_weights_MC_short.dat",
         cluster_restart=touch(
             "data/processed/conv_check/results/{compound_dir}/{solvent}/GaMD/{time}/{repeat}/{index}/{cluster_id}_clusters/rst/done.done"
-        ), # change this to directory once fixed.
+        ),
+        # change this to directory once fixed.
     params:
         cluster_dir="data/processed/conv_check/results/{compound_dir}/{solvent}/GaMD/{time}/{repeat}/{index}/{cluster_id}_clusters/",
         rst_dir="data/processed/conv_check/results/{compound_dir}/{solvent}/GaMD/{time}/{repeat}/{index}/{cluster_id}_clusters/rst/",
@@ -221,7 +222,7 @@ rule analyse_conv_check:
     input:
         unpack(aggregate_input),
     output:
-        dih_pca_comparison="data/processed/conv_check/results/{compound}/{solvent}/{method}/{time}/{repeat}/{index}_comparison-plot.png",
+        dih_pca_comparison="data/processed/conv_check/results/{compound}/{solvent}/{method}/{time}/{repeat}/{index}_comparison-plot.svg",
     log:
         notebook="data/processed/conv_check/notebooks/{compound}/{solvent}_{method}_{time}_{repeat}_{index}_convcheck.ipynb",
     conda:

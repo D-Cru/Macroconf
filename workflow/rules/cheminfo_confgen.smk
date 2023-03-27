@@ -216,10 +216,10 @@ rule confgen_NOE:
         parm="data/interim/{exp_name}/{compound}/data.json",
         energies="data/interim/{exp_name}/{compound}/{confgen}/{mode}/conf_energies.txt",
     output:
-        best_NOE_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/best_NOE.png",
-        NOE_violin_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/NOE_distribution.png",
+        best_NOE_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/best_NOE.svg",
+        NOE_violin_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/NOE_distribution.svg",
         fulfilled="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/NOE_fulfilled.json",
-        bundle_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/bundle_plot.png",
+        bundle_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/bundle_plot.svg",
     threads: 1
     conda:
         "../envs/stats.yaml"
