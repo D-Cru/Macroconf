@@ -236,6 +236,7 @@ Licenses for external libraries that were used in this project (& modified):
   - bug fixes (error in some peptide SMILES string)
 
   located in `workflow/libs/peplibgen/`
+  
 * [PyReweighting](http://miaolab.org/PyReweighting/)
    PyReweighting: Python scripts used to reweight accelerated molecular dynamics simulations. \
    Authors: Yinglong Miao <yinglong.miao@gmail.com> \
@@ -250,7 +251,7 @@ Licenses for external libraries that were used in this project (& modified):
    - Update scripts to work with most recent scipy version 
    - conversion to function based scripts that can be imported into other scripts.
 
-   located in `workflow/libs/pyreweight/` and modified in `workflow/src/pyreweight.py`
+   located in `workflow/src/pyreweight.py`
 
 * [RING](https://github.com/lucianlschan/RING)
    Understanding Ring Puckering in Small Molecules and Cyclic Peptides. \
