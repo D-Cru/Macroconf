@@ -29,7 +29,6 @@ Welcome to MacroConf. This repository contains the MacroConf dataset and associa
   - [Download workflow with 2 example compounds](#download-workflow-with-2-example-compounds)
   - [Download workflow with all results](#download-workflow-with-all-results)
   - [Using the MacroConf workflows](#using-the-macroconf-workflows)
-- [Todos before first release](#todos-before-first-release)
 - [Project Organization](#project-organization)
 - [Copyright and licenses](#copyright-and-licenses)
 
@@ -143,33 +142,6 @@ See the following pointers for more details on the workflow:
 ![Overview of Macroconf dataset & pipeline](workflow/docs/images/4_MacroConf%20Overview%20Fig.png "MacroConf dataset & workflows")
 
 
-# Todos before first release
-Todos before publishing: \
-done TODO: check + document all libs files \
-TODO: check + document all notebooks \
-done TODO: check + document all scripts \
-done TODO: check + document all src files \
-done TODO: check + document all test files \
-done TODO: check + document all rules \
-TODO: adapt notebooks for short trajectories!  \
-done TODO: clear out old random files in data \
-TODO: make sure convergence check is still working \
-done TODO: clear out samples.tsv \
-done TODO: clear out config files \
-done TODO: clear out main Snakefile \
-done TODO: clear out datasets \
-done TODO: extract all NOE files as .csv for dataset \
-done TODO: clear out data/interim files \
-done TODO: clear out data/processed files \
-done TODO: pin conda envs in envs/ \
-done TODO: make sure cis/trans compounds work equally well as regular ones \
-done TODO: make sure that cMD works as well as GaMD/aMD for all compounds \
-TODO: make sure that all files (shortened or full) are available to reproduce this workflow! \
-done TODO: make tests run on github \
-done TODO: make hashes unique for GaMD None! \
-done TODO: check which licenses are needed \
-TODO: create a test for cMD / aMD that tests the shortened trajectory analysis
-
 ------------
 
 
@@ -236,7 +208,7 @@ Licenses for external libraries that were used in this project (& modified):
   - bug fixes (error in some peptide SMILES string)
 
   located in `workflow/libs/peplibgen/`
-  
+
 * [PyReweighting](http://miaolab.org/PyReweighting/)
    PyReweighting: Python scripts used to reweight accelerated molecular dynamics simulations. \
    Authors: Yinglong Miao <yinglong.miao@gmail.com> \
