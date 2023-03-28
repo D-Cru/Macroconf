@@ -185,7 +185,7 @@ TODO: create a test for cMD / aMD that tests the shortened trajectory analysis
 │
 ├── docs                   <- Documentation
 │
-├── workflows              <- Snakemake workflow
+├── workflow              <- Snakemake workflow
 │   ├── data               <- data
 │   │   ├── external       <- Contains datasets to run workflow on
 │   │   ├── interim        <- Interim files (MD outputs, trajectories, etc.)
@@ -235,7 +235,7 @@ Licenses for external libraries that were used in this project (& modified):
   - Update scripts to work with python3
   - bug fixes (error in some peptide SMILES string)
 
-  located in `workflows/libs/peplibgen/`
+  located in `workflow/libs/peplibgen/`
 * [PyReweighting](http://miaolab.org/PyReweighting/)
    PyReweighting: Python scripts used to reweight accelerated molecular dynamics simulations. \
    Authors: Yinglong Miao <yinglong.miao@gmail.com> \
@@ -250,7 +250,7 @@ Licenses for external libraries that were used in this project (& modified):
    - Update scripts to work with most recent scipy version 
    - conversion to function based scripts that can be imported into other scripts.
 
-   located in `workflows/libs/pyreweight/` and modified in `workflows/src/pyreweight.py`
+   located in `workflow/libs/pyreweight/` and modified in `workflow/src/pyreweight.py`
 
 * [RING](https://github.com/lucianlschan/RING)
    Understanding Ring Puckering in Small Molecules and Cyclic Peptides. \
@@ -267,7 +267,35 @@ Licenses for external libraries that were used in this project (& modified):
    - Update scripts to work with mdtraj objects used here
    - small other changes
 
-   located in `workflows/src/Ring_Analysis.py` and `workflows/src/Ring_Reconstruction.py`
+   located in `workflow/src/Ring_Analysis.py` and `workflow/src/Ring_Reconstruction.py`
+
+
+* [customETKDG](https://github.com/rinikerlab/customETKDG)
+   Incorporating NOE-Derived Distances in Conformer Generation of Cyclic Peptides with Distance Geometry. \
+   Authors: Wang, Shuzhe \
+            Krummenacher, Kajo \
+            Landrum, Gregory A \
+            Sellers, Benjamin D \
+            Di Lello, Paola \
+            Robinson, Sarah J \
+            Martin, Bryan \
+            Holden, Jeffrey K \
+            Tom, Jeffrey YK \
+            Murthy, Anastasia C \
+            Popovych, Nataliya \
+            Riniker, Sereina
+   
+   No code license, but paper available under CC BY NC ND 4.0 License
+  
+   **Citation**:
+      J. Chem. Inf. Model. 2022, 62, 3, 472–485
+
+   **Modifications**:
+   Parts of the code were used and modified (bundling methods: NAMFIS, LICUV)
+   - Update scripts to work with mdtraj objects used here
+   - small other changes
+
+   located in `workflow/notebooks/confgen_NOE.py.ipynb`
 
 
 --------
