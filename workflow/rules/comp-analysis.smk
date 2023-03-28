@@ -332,6 +332,9 @@ rule md_comp_all_methods:
         plot5_sig=report(
             "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_sig_5.svg"
         ),
+        plot6=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_6.svg"
+        ),
     log:
         notebook="data/processed/{exp_name}/notebooks/methods/{methods}_{conf_gens}-NOE_method_comp.ipynb",
     conda:
