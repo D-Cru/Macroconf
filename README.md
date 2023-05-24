@@ -40,8 +40,8 @@ There are several ways to get started with MacroConf. You could do any of the be
 ## Explore the dataset & code in the browser
 
 If you are interested in the details of the dataset that were already computed,
-results are available in the [`workflow/results`](workflow/results) directory. In addition, you can
-access key simulation notebooks directly in your browser using [jupyterbooks](https://danie.lc/03_macroconf).
+results are available in the [`workflow/data/processed/refactor-test/`](workflow/data/processed/refactor-test) directory. In addition, you can
+access key simulation notebooks directly in your browser using [jupyterbooks](https://danie.lc/Macroconf).
 This works without installing anything on your system, and some of the interactive
 elements in the notebooks still work. However, you will not be able to change the code that was used to analyze the data.
 
@@ -58,9 +58,9 @@ The following prerequisites are required to run the steps below:
    sudo apt-get install git -y
    git --version
    ```
-* Conda to install required software dependencies
-* Amber18 to run the MD simulations.
-* OpenEye toolkits and OpenEye Omega if you want to use the cheminformatics conformer generators.
+* Conda to install required software dependencies: [Installation Instructions](https://docs.conda.io/projects/conda/en/stable/user-guide/install/index.html)
+* Amber18 to run the MD simulations: [Installation Instructions](https://ambermd.org/Installation.php)
+* OpenEye toolkits and OpenEye Omega if you want to use the cheminformatics conformer generators. [OMEGA](https://www.eyesopen.com/omega) [Installation Instructions](https://docs.eyesopen.com/applications/gettingstarted.html)
 
 Start by cloning the repository, without downloading any of the data:
 
@@ -91,12 +91,7 @@ This step is equivalent to downloading the entire repository (see step 3 below).
 
 If you want to reproduce the analysis results yourself, you can clone the full repository. Due to the large size of the MD trajectories (~TBs), the repository does not contain the MD trajectories. However, the github repository contains shortened versions of the trajectories that can be used to test the workflows. The exact figures in the notebooks will not be reproduced, but the general trends should be the same.
 
-Pre-requisites are the same as in step 2:
-   
-   * Git (any modern version should do)
-   * Conda to install required software dependencies
-   * Amber18 to run the MD simulations (requires a license).
-   * OpenEye toolkits and OpenEye Omega if you want to use the cheminformatics conformer generators (requires a license).
+Pre-requisites are the same as in step 2
 
 * Start by cloning the full repository
 
