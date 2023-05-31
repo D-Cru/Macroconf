@@ -308,3 +308,69 @@ def compute_fulfilled_percentage(NOE_df):
     )
 
     return sum(fulfilled) / len(fulfilled)
+
+
+def compute_RMSD_stepwise(NOE_df, exp, md, CI=0.95, n_bootstrap=10000):
+    """Compute the root mean squared deviation
+
+    Parameters
+    ----------
+    exp : numpy.array
+        Experimental values
+    md : numpy.array
+        simulation values
+    CI : float, optional
+        Confidence Interval, by default 0.95
+    n_bootstrap : int, optional
+        number of bootstrap intervals, by default 10000
+
+    Returns
+    -------
+    (float, float, float)
+        Returns RMSD, upper CI, lower CI
+    """
+    # create deepcopy of md and exp
+    md = md.copy()
+    exp = exp.copy()
+
+    # upper bound does not exist:
+    if np.all(NOE_df["upper bound"] == 0):
+        # set higher bound to 20% of experimental value
+        high_bound_value = 0.2
+        NOE_df["upper bound"] = NOE_df["NMR exp"] + (
+            NOE_df["NMR exp"] * high_bound_value
+        )
+
+    fulfilled = (NOE_df["md"] <= NOE_df["upper bound"]) & (
+        NOE_df["md"] >= NOE_df["lower bound"]
+    )
+
+    # set the fulfilled NOEs to the experimental value -> RMSD_{fulfilled} = 0
+    md[fulfilled] = exp[fulfilled]
+
+    # set the not fulfilled NOEs to the upper bound -> RMSD only considers violation
+    md[~fulfilled] = NOE_df["upper bound"][~fulfilled]
+
+    # compute RMSD 
+    RMSD = sklearn.metrics.mean_squared_error(exp, md, squared=False)
+
+    # bootstrap CI's
+    # Compute errors/CI:
+    boot_stats = []
+
+    for i in range(n_bootstrap):
+        resample = sklearn.utils.resample(exp.to_list(), md.to_list())
+
+        # perform statistical eval
+        result = sklearn.metrics.mean_squared_error(
+            resample[0], resample[1], squared=False
+        )
+        boot_stats.append(result)
+
+    # Confidence intervals
+
+    p = ((1.0 - CI) / 2.0) * 100
+    lower = max(0.0, np.percentile(boot_stats, p))
+    p = (CI + ((1.0 - CI) / 2.0)) * 100
+    upper = np.percentile(boot_stats, p)
+    return RMSD, upper, lower

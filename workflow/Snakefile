@@ -30,6 +30,8 @@ include: "rules/convergence_check.smk"
 include: "rules/cheminfo_confgen.smk"
 # add new compound
 include: "rules/add-compound.smk"
+# paper review
+include: "rules/review.smk"
 
 
 ############################ Execution options #################################
