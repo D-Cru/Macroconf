@@ -33,6 +33,9 @@ include: "rules/add-compound.smk"
 # paper review
 include: "rules/review.smk"
 
+ruleorder: md_comp_methods_review > md_comp_methods
+ruleorder: confgen_comp_methods_review > confgen_comp_methods
+ruleorder: md_comp_all_methods_review > md_comp_all_methods
 
 ############################ Execution options #################################
 # Set max. number of threads available to snakemake
