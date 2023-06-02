@@ -437,6 +437,28 @@ def compute_NOE_mdtraj(
                                 dist_1.flatten(), weights=weights
                             )
 
+                        elif reweigh_type == 4:
+                            # Reweight with 1d PMF of NOE distance via
+                            # MC Series expansion
+                            from .pyreweight import reweight_1d_pmf
+
+                            # Compute 1d PMF.
+                            pmf, distances = reweight_1d_pmf(
+                                dist_1.flatten(),
+                                None,
+                                "amdweight_MC",
+                                slicer,
+                                weight_data,
+                            )
+                            # Convert PMF to weight via Boltzmann factor.
+                            weights = np.exp(-1 * pmf / 0.5961)
+                            # Normalize weights (should not be necessary..)
+                            weights_norm = weights / np.sum(weights)
+                            # Perform NOE average.
+                            NOE_new = NOE_average(distances[:-1], weights_norm)
+                            # save pmf for plotting
+                            NOE_plot_data.append((pmf, distances[:-1], i))
+
                     # Save computed NOE average to ambiguous NOE list.
                     NOE_amg.append(NOE_new)
 
@@ -489,7 +511,7 @@ def compute_NOE_mdtraj(
             NOE_md_low.append(NOE_low_store)
 
     # Produce a PMF plot for every NOE
-    if reweigh_type == 1:
+    if reweigh_type == 1 or reweigh_type == 4:
         fig, axs = plt.subplots(
             int((len(NOE_plot_data) / 5) + 1), 5, squeeze=True
         )
