@@ -478,7 +478,6 @@ def confgen_comp_solvents_review(wildcards):
 #         "../notebooks/comp_compounds_confgen_review.py.ipynb"
 
 
-
 rule comp_solvent_props:
     input:
         unpack(confgen_comp_solvents_review),
@@ -532,7 +531,7 @@ def comp_methods_input_bol(wildcards):
         output[
             f"run_{sim_hash}"
         ] = f"data/processed/review/results/{w.compound}/{w.solvent}/{w.method}/{w.simtime}/{w.repeats}/{sim_hash}_noe_stats_bol.json"
-    
+
     return output
 
 
