@@ -3,7 +3,7 @@ threads_max: 12
 # Switch off certain analysis parts of the workflow, this is useful when running on a cluster and full analysis should not be done!
 # However, if e.g. the paper figures are requested, the Snakemake will run all previous steps of the workflow that are not up to date or missing!
 
-run_single_md_analysis: True  # Analysis of single MD runs
+run_single_md_analysis: False  # Analysis of single MD runs
 run_comp_analysis: False  # This compares 3 single MD runs of the same compound, and confgens
 run_heatmap_analysis: False  # Compare NOE stats of all MD runs for a single compound
 run_method_comp: False  # This does not produce any files rn..
@@ -11,7 +11,7 @@ run_eq_analysis: False  # Analyse equilibrations of single MD runs
 run_omega: False  # Run Omega Macrocycle for all samples compounds
 run_rdkit: False  # Run RDKit ETKDG for all samples compounds
 run_cheminfo_NOE_analysis: False  # Compute cheminformatics NOEs for all samples compounds
-make_paper_figures: False  # Produce figures for publication.
+make_paper_figures: True  # Produce figures for publication.
 update_jupyter_book: True  # Update toc (& symlinks) for the jupyter book
 
 # Specify a simulation that is a reference for a convergence check (start new equivalent simulations from every cluster point found in the reference simulation)

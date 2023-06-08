@@ -181,6 +181,16 @@ rule md_aMD_analysis:
             category="Compound {compound_dir}",
             subcategory="aMD",
         ),
+        rmsd_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_rmsd_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="aMD",
+        ),
+        omega_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_omega_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="aMD",
+        ),
         sasa=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_sasa.pkl",
         psa=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_psa.pkl",
         solvation_properties=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_solvation_properties.json",
