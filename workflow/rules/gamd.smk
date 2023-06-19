@@ -139,6 +139,17 @@ checkpoint md_GaMD_analysis:
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
+        conv_plot=report(
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_conv_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="GaMD",
+        ),
+        grid_cells=report(
+            f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_grid_cells.svg",
+            category="Compound {compound_dir}",
+            subcategory="GaMD",
+        ),
+        conv_data=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_conv_data.json",
         cluster_pdb=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_clusters/clusters.pdb",
         cluster_solvated=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_clusters/clusters_solvated.pdb",
         noe_result=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_noe_result.json",
@@ -174,6 +185,9 @@ checkpoint md_GaMD_analysis:
             category="Compound {compound_dir}",
             subcategory="GaMD",
         ),
+        sasa=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_sasa.pkl",
+        psa=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_psa.pkl",
+        solvation_properties=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_solvation_properties.json",
     params:
         cluster_dir=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_clusters/",
         rst_dir=f"data/processed/{config['exp_name']}/results/{{compound_dir}}/{{solvent}}/GaMD/{{time}}/{{repeat}}/{{index}}_clusters/rst/",

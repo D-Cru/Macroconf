@@ -11,7 +11,7 @@ run_eq_analysis: False  # Analyse equilibrations of single MD runs
 run_omega: False  # Run Omega Macrocycle for all samples compounds
 run_rdkit: False  # Run RDKit ETKDG for all samples compounds
 run_cheminfo_NOE_analysis: False  # Compute cheminformatics NOEs for all samples compounds
-make_paper_figures: True  # Produce figures for publication.
+make_paper_figures: False  # Produce figures for publication.
 update_jupyter_book: True  # Update toc (& symlinks) for the jupyter book
 
 # Specify a simulation that is a reference for a convergence check (start new equivalent simulations from every cluster point found in the reference simulation)

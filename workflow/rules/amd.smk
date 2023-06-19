@@ -30,7 +30,7 @@ rule md_aMD_cMD_readE:
     log:
         "{dir}/9_aMD_cMD/{time}/{repeat}/{index}_cpptraj.log",
     conda:
-        "../envs/ambertools.yml",
+        "../envs/ambertools.yml"
     envmodules:
         "amber/Amber18-AT19-BF17/GCC6.2-CUDA10.1",
     shell:
@@ -95,7 +95,7 @@ rule md_aMD_analysis:
         out="data/interim/{exp_name}/{compound_dir}/{solvent}/10_aMD_prod/{time}/{repeat}/{index}_md.out",
         traj="data/interim/{exp_name}/{compound_dir}/{solvent}/10_aMD_prod/{time}/{repeat}/{index}_traj.netcdf",
         traj_ncdf="data/interim/{exp_name}/{compound_dir}/{solvent}/10_aMD_prod/{time}/{repeat}/{index}_traj.ncdf",
-        top="data/interim/{exp_name}/{compound_dir}/{solvent}/1_make_topology/mc_sol.prmtop", #noe_csv="{data_dir}/{compound_dir}.csv",
+        top="data/interim/{exp_name}/{compound_dir}/{solvent}/1_make_topology/mc_sol.prmtop",  #noe_csv="{data_dir}/{compound_dir}.csv",
         parm="data/interim/{exp_name}/{compound_dir}/data.json",
         noe="data/interim/{exp_name}/{compound_dir}/NOE.json",
         ref_mol="data/interim/{exp_name}/{compound_dir}/{solvent}/1_make_topology/mc_gas.mol2",
@@ -145,6 +145,17 @@ rule md_aMD_analysis:
             category="Compound {compound_dir}",
             subcategory="aMD",
         ),
+        conv_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_conv_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="aMD",
+        ),
+        grid_cells=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_grid_cells.svg",
+            category="Compound {compound_dir}",
+            subcategory="aMD",
+        ),
+        conv_data="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_conv_data.json",
         cluster_pdb="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_clusters/clusters.pdb",
         cluster_solvated="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_clusters/clusters_solvated.pdb",
         noe_result="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_noe_result.json",
@@ -156,7 +167,8 @@ rule md_aMD_analysis:
         multiple="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_multiple.dat",
         cluster_restart=touch(
             "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_clusters/rst/done.done"
-        ), # change this to directory once fixed in SMK.
+        ),
+        # change this to directory once fixed in SMK.
         NPR_shape_plot=report(
             "data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_NPR_shape.png",
             category="Compound {compound_dir}",
@@ -169,6 +181,9 @@ rule md_aMD_analysis:
             category="Compound {compound_dir}",
             subcategory="aMD",
         ),
+        sasa=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_sasa.pkl",
+        psa=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_psa.pkl",
+        solvation_properties=f"data/processed/{{exp_name}}/results/{{compound_dir}}/{{solvent}}/aMD/{{time}}/{{repeat}}/{{index}}_solvation_properties.json",
     params:
         cluster_dir="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_clusters/",
         rst_dir="data/processed/{exp_name}/results/{compound_dir}/{solvent}/aMD/{time}/{repeat}/{index}_clusters/rst/",

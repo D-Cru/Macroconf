@@ -220,6 +220,9 @@ rule confgen_NOE:
         NOE_violin_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/NOE_distribution.svg",
         fulfilled="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/NOE_fulfilled.json",
         bundle_plot="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/bundle_plot.svg",
+        sasa="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/sasa.json",
+        psa="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/psa.json",
+        solvation_properties="data/processed/{exp_name}/results/{compound}/conf_gen/{confgen}/{mode}/solvation_properties.json",
     threads: 1
     conda:
         "../envs/stats.yaml"

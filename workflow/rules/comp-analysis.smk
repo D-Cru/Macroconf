@@ -226,6 +226,9 @@ def comp_methods_input(wildcards):
         output[
             f"run_{sim_hash}"
         ] = f"data/processed/{wildcards.exp_name}/results/{w.compound}/{w.solvent}/{w.method}/{w.simtime}/{w.repeats}/{sim_hash}_noe_stats.json"
+        output[
+            f"conv_{sim_hash}"
+        ] = f"data/processed/{wildcards.exp_name}/results/{w.compound}/{w.solvent}/{w.method}/{w.simtime}/{w.repeats}/{sim_hash}_conv_data.json"
 
     return output
 
@@ -239,6 +242,9 @@ rule md_comp_methods:
             "data/processed/{exp_name}/results/methods/{method}-{solvent}-{simtime}-{igamd}-NOE.png"
         ),
         data="data/processed/{exp_name}/results/methods/{method}-{solvent}-{simtime}-{igamd}-NOE_fulfilled.json",
+        conv_plot=report(
+            "data/processed/{exp_name}/results/methods/{method}-{solvent}-{simtime}-{igamd}-conv_plot.svg"
+        ),
     log:
         notebook="data/processed/{exp_name}/notebooks/methods/{method}-{solvent}-{simtime}-{igamd}-NOE_method_comp.ipynb",
     conda:
@@ -334,6 +340,39 @@ rule md_comp_all_methods:
         ),
         plot6=report(
             "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_6.svg"
+        ),
+        plot7=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_7.svg"
+        ),
+        plot7_sig=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_sig_7.svg"
+        ),
+        plot8=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_8.svg"
+        ),
+        plot8_sig=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_sig_8.svg"
+        ),
+        plot9=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_9.svg"
+        ),
+        plot9_sig=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_sig_9.svg"
+        ),
+        plot10=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_10.svg"
+        ),
+        plot10_sig=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_sig_10.svg"
+        ),
+        plot_seq_length=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_seq_length.svg"
+        ),
+        plot_boxplot_seq_length=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_boxplot_seq_length.svg"
+        ),
+        plot_boxplot_seq_length_bins=report(
+            "data/processed/{exp_name}/results/methods/{methods}_{conf_gens}-NOE-all_boxplot_seq_length_bins.svg"
         ),
     log:
         notebook="data/processed/{exp_name}/notebooks/methods/{methods}_{conf_gens}-NOE_method_comp.ipynb",

@@ -98,6 +98,17 @@ rule md_cMD_analysis:
             category="Compound {compound_dir}",
             subcategory="cMD",
         ),
+        conv_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_conv_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="cMD",
+        ),
+        grid_cells=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_grid_cells.svg",
+            category="Compound {compound_dir}",
+            subcategory="cMD",
+        ),
+        conv_data="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_conv_data.json",
         cluster_pdb="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_clusters/clusters.pdb",
         cluster_solvated="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_clusters/clusters_solvated.pdb",
         noe_result="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_noe_result.json",
@@ -109,7 +120,8 @@ rule md_cMD_analysis:
         multiple="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_multiple.dat",
         cluster_restart=touch(
             "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_clusters/rst/done.done"
-        ), # change this to directory once fixed in Snakemake.
+        ),
+        # change this to directory once fixed in Snakemake.
         NPR_shape_plot=report(
             "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_NPR_shape.png",
             category="Compound {compound_dir}",
@@ -122,6 +134,19 @@ rule md_cMD_analysis:
             category="Compound {compound_dir}",
             subcategory="cMD",
         ),
+        rmsd_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_rmsd_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="cMD",
+        ),
+        omega_plot=report(
+            "data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_omega_plot.svg",
+            category="Compound {compound_dir}",
+            subcategory="cMD",
+        ),
+        sasa="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_sasa.pkl",
+        psa="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_psa.pkl",
+        solvation_properties="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_solvation_properties.json",
     params:
         cluster_dir="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_clusters/",
         rst_dir="data/processed/{exp_name}/results/{compound_dir}/{solvent}/cMD/{time}/{repeat}/{index}_clusters/rst/",
