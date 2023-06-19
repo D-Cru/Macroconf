@@ -439,7 +439,7 @@ def compute_NOE_mdtraj(
 
                         elif reweigh_type == 4:
                             # Reweight with 1d PMF of NOE distance via
-                            # MC Series expansion
+                            # Maclaurin Series expansion
                             from .pyreweight import reweight_1d_pmf
 
                             # Compute 1d PMF.
