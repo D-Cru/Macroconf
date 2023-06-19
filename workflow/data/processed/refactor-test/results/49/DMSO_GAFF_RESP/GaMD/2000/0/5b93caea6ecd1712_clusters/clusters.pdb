@@ -1,4 +1,4 @@
-REMARK   1 CREATED WITH MDTraj 1.9.7, 2022-10-19
+REMARK   1 CREATED WITH MDTraj 1.9.7, 2023-06-04
 CRYST1   38.044   38.044   38.044 109.47 109.47 109.47 P 1           1 
 MODEL        0
 ATOM      1  N   ARG A   0       0.611   3.454   2.408  1.00  0.00           N  
