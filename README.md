@@ -1,5 +1,4 @@
-[![Jupter Book](https://github.com/D-Cru/macroconf/actions/workflows/deploy.yml/badge.svg)](https://github.com/d-cru/macroconf/actions/deploy.yml)
-[![Unit tests](https://github.com/D-Cru/macroconf/actions/workflows/main.yml/badge.svg)](https://github.com/D-Cru/macroconf/actions/workflows/main.yml)
+
 
 # MacroConf - dataset & workflows for cyclic peptide solutions structure conformer generators
 
